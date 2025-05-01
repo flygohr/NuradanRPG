@@ -5,70 +5,96 @@ extends Sprite2D
 @onready var frontCheck = $FrontCheck
 
 
-enum PlayerState { IDLE, TURNING, WALKING }
-enum FacingDirection { LEFT, RIGHT, UP, DOWN }
+enum playerStates { IDLE, TURNING, WALKING }
+enum facingDirections { LEFT, RIGHT, UP, DOWN }
 
-var player_state = PlayerState.IDLE
-var facing_direction = FacingDirection.DOWN
+var currentPlayerState = playerStates.IDLE
+var currentFacingDirection = facingDirections.DOWN
+
+var inputDirection
+var isMoving = false
+var moveSpeed : float = 0.2
 
 
-# if idle and action pressed is not facing direction -> turn on the spot
-# if idle and action pressed IS facing direction -> move 1
-# if idle and action keep pressed -> keep walking 
+var holdCounter : float = 0.0
+var holdTime : float = 0.3
 
+func _physics_process(delta): # delta = reliable way to keep track of time regardless of frames
+	inputDirection = Vector2.ZERO
 
-var hold_counter : float = 0.0
-var hold_time : float = 0.3
-# hold_counter += delta
-# hold_counter == 0.0
-
-# func _physics_process(delta): # delta = reliable way to keep track of time regardless of frames
-func _input(event):
-	if event.is_action_pressed("ui_up"):
+	if Input.is_action_just_released("ui_up"):
+		holdCounter = 0.0
+		
+	elif Input.is_action_pressed("ui_up"):
+		print(holdCounter)
+		holdCounter += delta
 		_animation_player.play("idleUp")
-		if facing_direction == FacingDirection.UP and !rayCast.is_colliding():
-			position.y -= Globals.TILE_SIZE
-		updateFacingDir("up")
+		inputDirection = Vector2.UP
+		if holdCounter >= holdTime and !rayCast.is_colliding():
+			move()
+		elif holdCounter < holdTime: # work on this damn thing here
+			if currentFacingDirection != facingDirections.UP:
+				print("turning")
+				Globals.wait(holdTime)
+				updateFacingDirection()
+			elif currentFacingDirection == facingDirections.UP and !rayCast.is_colliding():
+				print("moving")
+				move()
 		
-	elif event.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("ui_right"):
+		inputDirection = Vector2.RIGHT
 		_animation_player.play("idleRight")
-		if facing_direction == FacingDirection.RIGHT and !rayCast.is_colliding():
-			position.x += Globals.TILE_SIZE
-		updateFacingDir("right")
+		if currentFacingDirection == facingDirections.RIGHT and !rayCast.is_colliding():
+			move()
+		updateFacingDirection()
 		
-	elif event.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down"):
+		inputDirection = Vector2.DOWN
 		_animation_player.play("idleDown")
-		if facing_direction == FacingDirection.DOWN and !rayCast.is_colliding():
-			position.y += Globals.TILE_SIZE
-		updateFacingDir("down")
+		if currentFacingDirection == facingDirections.DOWN and !rayCast.is_colliding():
+			move()
+		updateFacingDirection()
 		
-	elif event.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left"):
+		inputDirection = Vector2.LEFT
 		_animation_player.play("idleLeft")
-		if facing_direction == FacingDirection.LEFT and !rayCast.is_colliding():
-			position.x -= Globals.TILE_SIZE
-		updateFacingDir("left")
+		if currentFacingDirection == facingDirections.LEFT and !rayCast.is_colliding():
+			move()
+		updateFacingDirection()
 
-func updateFacingDir(direction):
-	if direction == "up":
-		facing_direction = FacingDirection.UP
+func move():
+	if inputDirection:
+		if isMoving == false:
+			isMoving = true
+			updateFacingDirection()
+			var tween = create_tween()
+			tween.tween_property(self, "position", position+inputDirection*Globals.TILE_SIZE, moveSpeed)
+			tween.tween_callback(stopMoving)
+			
+func stopMoving():
+	isMoving = false
+
+func updateFacingDirection():
+	if inputDirection == Vector2.UP:
+		currentFacingDirection = facingDirections.UP
 		rayCast.target_position.x = 0
 		rayCast.target_position.y = -Globals.TILE_SIZE
 		frontCheck.position.x = 0
 		frontCheck.position.y = -(Globals.TILE_SIZE*2)
-	elif direction == "right":
-		facing_direction = FacingDirection.RIGHT
+	elif inputDirection == Vector2.RIGHT:
+		currentFacingDirection = facingDirections.RIGHT
 		rayCast.target_position.x = Globals.TILE_SIZE
 		rayCast.target_position.y = 0
 		frontCheck.position.x = Globals.TILE_SIZE
 		frontCheck.position.y = -Globals.TILE_SIZE
-	elif direction == "down":
-		facing_direction = FacingDirection.DOWN
+	elif inputDirection == Vector2.DOWN:
+		currentFacingDirection = facingDirections.DOWN
 		rayCast.target_position.x = 0
 		rayCast.target_position.y = Globals.TILE_SIZE
 		frontCheck.position.x = 0
 		frontCheck.position.y = 0
-	elif direction == "left":
-		facing_direction = FacingDirection.LEFT
+	elif inputDirection == Vector2.LEFT:
+		currentFacingDirection = facingDirections.LEFT
 		rayCast.target_position.x = -Globals.TILE_SIZE
 		rayCast.target_position.y =  0
 		frontCheck.position.x = -Globals.TILE_SIZE
