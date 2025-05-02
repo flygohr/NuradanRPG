@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=4 uid="uid://bekm13xm38nmh"]
+[gd_scene load_steps=2 format=4 uid="uid://bekm13xm38nmh"]
 
 [ext_resource type="TileSet" uid="uid://dw1f6j2mjntfu" path="res://Overworld/overworld.tres" id="1_mwgaf"]
-[ext_resource type="PackedScene" uid="uid://dqkwnw68aqq71" path="res://Player/player.tscn" id="2_mwgaf"]
 
 [node name="Overworld" type="Node2D"]
 
@@ -12,6 +11,3 @@ tile_set = ExtResource("1_mwgaf")
 [node name="Props" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAADAAMAAAAAAAAAAAAGAAcAAAAAAAAAAAAMAAUAAAAAAAAAAAAKAAMAAAAAAAEAAAACAAkAAAAAAAEAAAA=")
 tile_set = ExtResource("1_mwgaf")
-
-[node name="Player" parent="." instance=ExtResource("2_mwgaf")]
-position = Vector2(112, 96)

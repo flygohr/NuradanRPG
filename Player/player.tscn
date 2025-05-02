@@ -207,5 +207,3 @@ target_position = Vector2(0, 16)
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_btcbx")
 debug_color = Color(0.878291, 0.246862, 0.372471, 0.42)
-
-[node name="Timer" type="Timer" parent="."]

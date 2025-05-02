@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="NuradanRPG"
-run/main_scene="uid://bekm13xm38nmh"
+run/main_scene="uid://c6nbii1c1bnuc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]
