@@ -21,15 +21,11 @@ var inputDirection : Vector2
 var isMoving = false
 var moveSpeed : float = 0.1
 
-var holdCounter
-var holdTime = 20
-
 func _ready() -> void: 
 	anim_state.travel("Idle")
 
 
 func _physics_process(_delta: float) -> void:
-	holdManager()
 	inputDirection = Vector2.ZERO
 	anim_tree.set("parameters/Idle/blend_position", currentFacingDirection)
 	anim_tree.set("parameters/Walk/blend_position", currentFacingDirection)
@@ -53,21 +49,14 @@ func _physics_process(_delta: float) -> void:
 	
 	if !currentFacingDirection.is_equal_approx(inputDirection):
 		updateFacingDirection()
+		isMoving = true
 		anim_state.travel("Turn")
 	else:
 		move()
 
-func holdManager():
-	if inputDirection != Vector2.ZERO:
-		holdCounter += 1
-	else: holdCounter = 0
-	
-	if holdCounter > holdTime: return true
-	else: return false
-
 func move():
 	if inputDirection:
-		if isMoving == false and !rayCast.is_colliding() and holdManager():
+		if isMoving == false and !rayCast.is_colliding():
 			isMoving = true
 			anim_state.travel("Walk")
 			var tween = create_tween()
