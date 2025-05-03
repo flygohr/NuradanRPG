@@ -12,7 +12,7 @@ const MOVEMENTS = {
 	'ui_right': Vector2.RIGHT,
 	'ui_down': Vector2.DOWN,
 }
-var direction_history = []
+var direction_history = [] # used to store latest inputs
 
 var currentPlayerState = playerStates.IDLE
 var currentFacingDirection : Vector2 = Vector2.DOWN

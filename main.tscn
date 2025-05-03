@@ -9,4 +9,3 @@
 
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(112, 96)
-frame = 8
