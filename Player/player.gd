@@ -1,9 +1,9 @@
 extends Sprite2D
 
-@onready var _animation_player = $AnimationPlayer
 @onready var rayCast = $RayCast2D
 @onready var frontCheck = $FrontCheck
-
+@onready var anim_tree = $AnimationTree
+@onready var anim_state = anim_tree.get("parameters/playback")
 
 enum playerStates { IDLE, TURNING, WALKING }
 const MOVEMENTS = {
@@ -25,12 +25,15 @@ var holdCounter
 var holdTime = 20
 
 func _ready() -> void: 
-	_animation_player.play("idleDown")
+	anim_state.travel("Idle")
 
-func _physics_process(delta: float) -> void:
+
+func _physics_process(_delta: float) -> void:
 	holdManager()
 	inputDirection = Vector2.ZERO
-
+	anim_tree.set("parameters/Idle/blend_position", currentFacingDirection)
+	anim_tree.set("parameters/Walk/blend_position", currentFacingDirection)
+	anim_tree.set("parameters/Turn/blend_position", currentFacingDirection)
 	# loop through all the directions ('ui_up', ui_left', etc),
 	# check to see if a key has been released, and if so, we
 	# want to remove it from the array holding all the pressed keys
@@ -50,6 +53,7 @@ func _physics_process(delta: float) -> void:
 	
 	if !currentFacingDirection.is_equal_approx(inputDirection):
 		updateFacingDirection()
+		anim_state.travel("Turn")
 	else:
 		move()
 
@@ -65,39 +69,38 @@ func move():
 	if inputDirection:
 		if isMoving == false and !rayCast.is_colliding() and holdManager():
 			isMoving = true
+			anim_state.travel("Walk")
 			var tween = create_tween()
 			tween.tween_property(self, "position", position+inputDirection*Globals.TILE_SIZE, moveSpeed)
 			tween.tween_callback(stopMoving)
 			
 func stopMoving():
 	isMoving = false
+	anim_state.travel("Idle")
 
 func updateFacingDirection():
-	if inputDirection == Vector2.UP:
-		_animation_player.play("idleUp")
-		currentFacingDirection = inputDirection
-		rayCast.target_position.x = 0
-		rayCast.target_position.y = -Globals.TILE_SIZE
-		frontCheck.position.x = 0
-		frontCheck.position.y = -(Globals.TILE_SIZE*2)
-	elif inputDirection == Vector2.RIGHT:
-		_animation_player.play("idleRight")
-		currentFacingDirection = inputDirection
-		rayCast.target_position.x = Globals.TILE_SIZE
-		rayCast.target_position.y = 0
-		frontCheck.position.x = Globals.TILE_SIZE
-		frontCheck.position.y = -Globals.TILE_SIZE
-	elif inputDirection == Vector2.DOWN:
-		_animation_player.play("idleDown")
-		currentFacingDirection = inputDirection
-		rayCast.target_position.x = 0
-		rayCast.target_position.y = Globals.TILE_SIZE
-		frontCheck.position.x = 0
-		frontCheck.position.y = 0
-	elif inputDirection == Vector2.LEFT:
-		_animation_player.play("idleLeft")
-		currentFacingDirection = inputDirection
-		rayCast.target_position.x = -Globals.TILE_SIZE
-		rayCast.target_position.y =  0
-		frontCheck.position.x = -Globals.TILE_SIZE
-		frontCheck.position.y = -Globals.TILE_SIZE
+	match inputDirection:
+		Vector2.UP:
+			currentFacingDirection = inputDirection
+			rayCast.target_position.x = 0
+			rayCast.target_position.y = -Globals.TILE_SIZE
+			frontCheck.position.x = 0
+			frontCheck.position.y = -(Globals.TILE_SIZE*2)
+		Vector2.RIGHT:
+			currentFacingDirection = inputDirection
+			rayCast.target_position.x = Globals.TILE_SIZE
+			rayCast.target_position.y = 0
+			frontCheck.position.x = Globals.TILE_SIZE
+			frontCheck.position.y = -Globals.TILE_SIZE
+		Vector2.DOWN:
+			currentFacingDirection = inputDirection
+			rayCast.target_position.x = 0
+			rayCast.target_position.y = Globals.TILE_SIZE
+			frontCheck.position.x = 0
+			frontCheck.position.y = 0
+		Vector2.LEFT:
+			currentFacingDirection = inputDirection
+			rayCast.target_position.x = -Globals.TILE_SIZE
+			rayCast.target_position.y =  0
+			frontCheck.position.x = -Globals.TILE_SIZE
+			frontCheck.position.y = -Globals.TILE_SIZE
