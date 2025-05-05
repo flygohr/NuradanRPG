@@ -375,6 +375,7 @@ size = Vector2(16, 16)
 size = Vector2(14, 14)
 
 [node name="Player" type="Sprite2D"]
+y_sort_enabled = true
 texture = ExtResource("1_l8h54")
 centered = false
 offset = Vector2(0, -32)
