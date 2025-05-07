@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4p7201shjrth" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://65s0ujxi2ifn" path="res://Player/PlayerCharacter.png" id="1_l8h54"]
-[ext_resource type="Script" uid="uid://cajmnrwn745n" path="res://Player/player_collission.gd" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://cajmnrwn745n" path="res://Player/player_collision.gd" id="3_btcbx"]
 
 [sub_resource type="Animation" id="Animation_apopc"]
 length = 0.001

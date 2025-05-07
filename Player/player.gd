@@ -1,8 +1,8 @@
 extends Sprite2D
 
-@onready var rayCast = $RayCast2D
-@onready var frontCheck = $FrontCheck
-@onready var anim_tree = $AnimationTree
+@onready var rayCast := $RayCast2D
+@onready var frontCheck := $FrontCheck
+@onready var anim_tree := $AnimationTree
 @onready var anim_state = anim_tree.get("parameters/playback")
 
 enum playerStates { IDLE, TURNING, WALKING }
@@ -12,14 +12,14 @@ const MOVEMENTS = {
 	'ui_right': Vector2.RIGHT,
 	'ui_down': Vector2.DOWN,
 }
-var direction_history = [] # used to store latest inputs
+var direction_history := [] # used to store latest inputs
 
-var currentPlayerState = playerStates.IDLE
-var currentFacingDirection : Vector2 = Vector2.DOWN
+var currentPlayerState := playerStates.IDLE
+var currentFacingDirection := Vector2.DOWN
 
 var inputDirection : Vector2
-var isMoving = false
-var moveSpeed : float = 0.1
+var isMoving := false
+@export var moveSpeed := 0.2
 
 func _ready() -> void: 
 	anim_state.travel("Idle")
@@ -46,16 +46,15 @@ func _physics_process(_delta: float) -> void:
 		inputDirection = MOVEMENTS[direction]
 
 	if inputDirection == Vector2.ZERO: return # don't do anything if there's no input
-	
-	if !currentFacingDirection.is_equal_approx(inputDirection):
-		updateFacingDirection()
-		isMoving = true
-		anim_state.travel("Turn")
-	else:
-		move()
+	updateFacingDirection()
+	processInput()
 
-func move():
+func processInput():
+	# tap to turn
+	# tap to move once
+	# keep holding to keep moving
 	if inputDirection:
+		rayCast.force_raycast_update()
 		if isMoving == false and !rayCast.is_colliding():
 			isMoving = true
 			anim_state.travel("Walk")

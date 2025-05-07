@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dctbwjndfn6bc"]
+[gd_scene load_steps=10 format=3 uid="uid://dctbwjndfn6bc"]
 
 [ext_resource type="Script" uid="uid://c70grmvqgri2h" path="res://Overworld/tall_grass.gd" id="1_7aibg"]
-[ext_resource type="Texture2D" uid="uid://6yw27wpo8jul" path="res://Overworld/tall_grass_anim.png" id="2_alh4f"]
-[ext_resource type="Texture2D" uid="uid://cebv5tf43dsm7" path="res://Overworld/interactive_tiles.png" id="3_4m0co"]
+[ext_resource type="Texture2D" uid="uid://cmw1558fevquk" path="res://Assets/tallGrass.png" id="2_ubabf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bvuw"]
 size = Vector2(14, 14)
@@ -35,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6]
+"values": [1, 2, 3, 4, 5, 6, 7]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qhgg7"]
@@ -70,10 +69,10 @@ tracks/0/path = NodePath("Background:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1]
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jhcs8"]
@@ -87,16 +86,15 @@ script = ExtResource("1_7aibg")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(8, -8)
-texture = ExtResource("3_4m0co")
+texture = ExtResource("2_ubabf")
 hframes = 8
-vframes = 8
 
 [node name="Overlay" type="Sprite2D" parent="."]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(8, -8)
-texture = ExtResource("2_alh4f")
-hframes = 7
+texture = ExtResource("2_ubabf")
+hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, -8)

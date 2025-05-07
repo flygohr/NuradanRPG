@@ -2,7 +2,6 @@ extends TileMapLayer
 
 func _ready() -> void:
 	var area = get_used_rect().size
-	print(area.y)
 	
 	for r in 8:
 		for x in (area.x+(r*2)):
