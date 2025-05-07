@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=4 uid="uid://bekm13xm38nmh"]
+[gd_scene load_steps=7 format=4 uid="uid://bekm13xm38nmh"]
 
 [ext_resource type="TileSet" uid="uid://dw1f6j2mjntfu" path="res://Assets/overworld.tres" id="1_mwgaf"]
 [ext_resource type="Script" uid="uid://bn6dkem1rj6bi" path="res://Overworld/ground.gd" id="2_mwgaf"]
 [ext_resource type="Script" uid="uid://cewv35mdkoxq" path="res://Overworld/trees.gd" id="3_2pj3o"]
 [ext_resource type="Script" uid="uid://dgfcn28ytkirw" path="res://Overworld/props.gd" id="3_begid"]
+[ext_resource type="Script" uid="uid://bqwq7h13515ju" path="res://Overworld/connection.gd" id="5_h6jj6"]
 
-[node name="Overworld" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h2pad"]
+size = Vector2(384, 16)
+
+[node name="Sund" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Ground" type="TileMapLayer" parent="."]
@@ -39,3 +43,10 @@ z_index = 1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAACAAMAAAAFAAgAAAADAAMAAAAGAAgAAAAEAAMAAAAHAAgAAAAFAAMAAAAIAAgAAAAPAA8AAAAGAAQAAAAQAA8AAAAHAAQAAAATABAAAAAGAAQAAAAUABAAAAAHAAQAAAAUABIAAAAHAAYAAAATABIAAAAGAAYAAAAPAAgAAAAIAAYAAAAOAAgAAAAFAAYAAAAQAAgAAAAGAAYAAAARAAgAAAAHAAYAAAARAAYAAAAHAAQAAAAQAAYAAAAGAAQAAAAPAAYAAAAGAAQAAAAOAAYAAAAFAAQAAAASABAAAAAGAAQAAAARABAAAAAFAAQAAAAOAA8AAAAGAAQAAAANAA8AAAAFAAQAAAANABEAAAAFAAYAAAARABIAAAAFAAYAAAAPABEAAAAGAAYAAAAQABEAAAAHAAYAAAASABIAAAAIAAYAAAAOABEAAAAIAAYAAAA=")
 tile_set = ExtResource("1_mwgaf")
+
+[node name="Connection" type="Area2D" parent="."]
+script = ExtResource("5_h6jj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Connection"]
+position = Vector2(192, -8)
+shape = SubResource("RectangleShape2D_h2pad")
