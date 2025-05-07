@@ -1,7 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://dqkwnw68aqq71"]
+[gd_scene load_steps=36 format=3 uid="uid://dqkwnw68aqq71"]
 
 [ext_resource type="Script" uid="uid://c4p7201shjrth" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://65s0ujxi2ifn" path="res://Player/PlayerCharacter.png" id="1_l8h54"]
+[ext_resource type="Script" uid="uid://cajmnrwn745n" path="res://Player/player_collission.gd" id="3_btcbx"]
 
 [sub_resource type="Animation" id="Animation_apopc"]
 length = 0.001
@@ -375,7 +376,6 @@ size = Vector2(16, 16)
 size = Vector2(14, 14)
 
 [node name="Player" type="Sprite2D"]
-z_index = 1
 y_sort_enabled = true
 texture = ExtResource("1_l8h54")
 centered = false
@@ -402,6 +402,7 @@ offset = Vector2(8, -16)
 zoom = Vector2(4, 4)
 
 [node name="PlayerCollission" type="Area2D" parent="."]
+script = ExtResource("3_btcbx")
 
 [node name="PlayerCollissionShape" type="CollisionShape2D" parent="PlayerCollission"]
 position = Vector2(8, -8)
@@ -417,3 +418,5 @@ target_position = Vector2(0, 16)
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_btcbx")
 debug_color = Color(0.878291, 0.246862, 0.372471, 0.42)
+
+[node name="Node2D" type="Node2D" parent="."]
