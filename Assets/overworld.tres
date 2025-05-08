@@ -65,7 +65,6 @@ texture = ExtResource("1_5eufp")
 3:7/0 = 0
 3:7/0/texture_origin = Vector2i(-8, 0)
 0:4/0 = 0
-0:4/0/custom_data_0 = "tallGrass"
 6:0/size_in_atlas = Vector2i(2, 3)
 6:0/0 = 0
 6:0/0/texture_origin = Vector2i(-8, 16)
@@ -181,6 +180,4 @@ texture = ExtResource("1_5eufp")
 
 [resource]
 physics_layer_0/collision_layer = 1
-custom_data_layer_0/name = "tileType"
-custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_mwgaf")

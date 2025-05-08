@@ -26,6 +26,15 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+
+	updateFacingDirection()
+	processInput()
+
+func processInput():
+	# tap to turn
+	# tap to move once
+	# keep holding to keep moving
+	
 	inputDirection = Vector2.ZERO
 	anim_tree.set("parameters/Idle/blend_position", currentFacingDirection)
 	anim_tree.set("parameters/Walk/blend_position", currentFacingDirection)
@@ -46,13 +55,7 @@ func _physics_process(_delta: float) -> void:
 		inputDirection = MOVEMENTS[direction]
 
 	if inputDirection == Vector2.ZERO: return # don't do anything if there's no input
-	updateFacingDirection()
-	processInput()
-
-func processInput():
-	# tap to turn
-	# tap to move once
-	# keep holding to keep moving
+	
 	if inputDirection:
 		rayCast.force_raycast_update()
 		if isMoving == false and !rayCast.is_colliding():
