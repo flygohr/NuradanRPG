@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5jcses2ndl7s"]
+
+[ext_resource type="Script" uid="uid://x77ncy7rfxnc" path="res://ScreenshotSaver/screenshot_saver.gd" id="1_0afka"]
+[ext_resource type="PackedScene" uid="uid://bekm13xm38nmh" path="res://Overworld/overworld.tscn" id="1_uwccn"]
+
+[node name="ScreenshotSaver" type="SubViewportContainer"]
+script = ExtResource("1_0afka")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(384, 384)
+render_target_update_mode = 4
+
+[node name="Sund" parent="SubViewport" instance=ExtResource("1_uwccn")]
