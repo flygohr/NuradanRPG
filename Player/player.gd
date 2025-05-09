@@ -1,97 +1,103 @@
 extends Sprite2D
 
-@onready var rayCast := $RayCast2D
-@onready var frontCheck := $FrontCheck
-@onready var anim_tree := $AnimationTree
-@onready var anim_state = anim_tree.get("parameters/playback")
+class_name Player
+
+@export var walk_speed = 6.0
+
+@onready var animTree = $AnimationTree
+@onready var animState = animTree.get("parameters/playback")
+@onready var rayCast = $RayCast2D
+@onready var frontCheckBox = $FrontCheck
 
 enum playerStates { IDLE, TURNING, WALKING }
-const MOVEMENTS = {
-	'ui_up': Vector2.UP,
-	'ui_left': Vector2.LEFT,
-	'ui_right': Vector2.RIGHT,
-	'ui_down': Vector2.DOWN,
-}
-var direction_history := [] # used to store latest inputs
+enum facingDirections { LEFT, RIGHT, UP, DOWN }
 
-var currentPlayerState := playerStates.IDLE
-var currentFacingDirection := Vector2.DOWN
+var currentPlayerState = playerStates.IDLE
+var currentFacingDirection = facingDirections.DOWN
 
-var inputDirection : Vector2
-var isMoving := false
-@export var moveSpeed := 0.2
+var initialPosition = Vector2(0, 0)
+var inputDirection = Vector2(0, 0)
+var isMoving = false
+var percentMovedToNextTile = 0.0
 
-func _ready() -> void: 
-	anim_state.travel("Idle")
+func _ready():
+	animTree.active = true
+	initialPosition = position
 
+func _physics_process(delta):
+	if currentPlayerState == playerStates.TURNING:
+		return
+	elif isMoving == false:
+		process_player_input()
+	elif inputDirection != Vector2.ZERO:
+		animState.travel("Walk")
+		move(delta)
+	else:
+		animState.travel("Idle")
+		isMoving = false
 
-func _physics_process(_delta: float) -> void:
-
-	updateFacingDirection()
-	processInput()
-
-func processInput():
-	# tap to turn
-	# tap to move once
-	# keep holding to keep moving
-	
-	inputDirection = Vector2.ZERO
-	anim_tree.set("parameters/Idle/blend_position", currentFacingDirection)
-	anim_tree.set("parameters/Walk/blend_position", currentFacingDirection)
-	anim_tree.set("parameters/Turn/blend_position", currentFacingDirection)
-	# loop through all the directions ('ui_up', ui_left', etc),
-	# check to see if a key has been released, and if so, we
-	# want to remove it from the array holding all the pressed keys
-	for direction in MOVEMENTS.keys():
-		if Input.is_action_just_released(direction):
-			var index = direction_history.find(direction)
-			if index != -1:
-				direction_history.remove_at(index)
-		if Input.is_action_just_pressed(direction):
-			direction_history.append(direction)
-
-	if direction_history.size():
-		var direction = direction_history[direction_history.size() - 1]
-		inputDirection = MOVEMENTS[direction]
-
-	if inputDirection == Vector2.ZERO: return # don't do anything if there's no input
-	
-	if inputDirection:
-		rayCast.force_raycast_update()
-		if isMoving == false and !rayCast.is_colliding():
-			isMoving = true
-			anim_state.travel("Walk")
-			var tween = create_tween()
-			tween.tween_property(self, "position", position+inputDirection*Globals.TILE_SIZE, moveSpeed)
-			tween.tween_callback(stopMoving)
-			
-func stopMoving():
-	isMoving = false
-	anim_state.travel("Idle")
-
-func updateFacingDirection():
-	match inputDirection:
+func change_front_check_position(dir):
+	match dir:
 		Vector2.UP:
-			currentFacingDirection = inputDirection
-			rayCast.target_position.x = 0
-			rayCast.target_position.y = -Globals.TILE_SIZE
-			frontCheck.position.x = 0
-			frontCheck.position.y = -(Globals.TILE_SIZE*2)
-		Vector2.RIGHT:
-			currentFacingDirection = inputDirection
-			rayCast.target_position.x = Globals.TILE_SIZE
-			rayCast.target_position.y = 0
-			frontCheck.position.x = Globals.TILE_SIZE
-			frontCheck.position.y = -Globals.TILE_SIZE
-		Vector2.DOWN:
-			currentFacingDirection = inputDirection
-			rayCast.target_position.x = 0
-			rayCast.target_position.y = Globals.TILE_SIZE
-			frontCheck.position.x = 0
-			frontCheck.position.y = 0
-		Vector2.LEFT:
-			currentFacingDirection = inputDirection
-			rayCast.target_position.x = -Globals.TILE_SIZE
-			rayCast.target_position.y =  0
-			frontCheck.position.x = -Globals.TILE_SIZE
-			frontCheck.position.y = -Globals.TILE_SIZE
+			frontCheckBox.position = Vector2(0, -32)
+		Vector2.RIGHT:	
+			frontCheckBox.position = Vector2(16, -16)
+		Vector2.DOWN:	
+			frontCheckBox.position = Vector2(0, 0)
+		Vector2.LEFT:	
+			frontCheckBox.position = Vector2(-16, -16)
+
+func process_player_input():
+	if inputDirection.y == 0:
+		inputDirection.x = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left"))
+	if inputDirection.x == 0:
+		inputDirection.y = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
+	if inputDirection != Vector2.ZERO:
+		animTree.set("parameters/Idle/blend_position", inputDirection)
+		animTree.set("parameters/Walk/blend_position", inputDirection)
+		animTree.set("parameters/Turn/blend_position", inputDirection)
+		change_front_check_position(inputDirection)
+		if need_to_turn():
+			currentPlayerState = playerStates.TURNING
+			animState.travel("Turn")
+		else:
+			initialPosition = position
+			isMoving = true
+	else:
+		animState.travel("Idle")
+
+func need_to_turn():
+	var newCurrentFacingDirection
+	if inputDirection.x < 0:
+		newCurrentFacingDirection = facingDirections.LEFT
+	elif inputDirection.x > 0:
+		newCurrentFacingDirection = facingDirections.RIGHT
+	elif inputDirection.y < 0:
+		newCurrentFacingDirection = facingDirections.UP
+	elif inputDirection.y > 0:
+		newCurrentFacingDirection = facingDirections.DOWN
+	if currentFacingDirection != newCurrentFacingDirection:
+		currentFacingDirection = newCurrentFacingDirection
+		return true
+	else:
+		currentFacingDirection = newCurrentFacingDirection
+		return false
+
+func finished_turning():
+	currentPlayerState = playerStates.IDLE
+
+func move(delta):
+	var desiredStep: Vector2 = inputDirection * Globals.TILE_SIZE / 2
+	rayCast.target_position = desiredStep
+	rayCast.force_raycast_update()
+	if !rayCast.is_colliding():
+		percentMovedToNextTile += walk_speed * delta
+		if percentMovedToNextTile >= 1.0:
+			position = initialPosition + (Globals.TILE_SIZE * inputDirection)
+			percentMovedToNextTile = 0.0
+			isMoving = false
+		else:
+			position = initialPosition + (Globals.TILE_SIZE * inputDirection * percentMovedToNextTile)
+	else:
+		percentMovedToNextTile = 0.0
+		isMoving = false
