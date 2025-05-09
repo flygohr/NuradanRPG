@@ -8,6 +8,6 @@ y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
 z_index = 1
-position = Vector2(64, 128)
+position = Vector2(144, 144)
 
 [node name="Sund" parent="." instance=ExtResource("1_0xm2m")]
