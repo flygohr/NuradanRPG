@@ -26,6 +26,10 @@ window/size/viewport_width=960
 window/size/viewport_height=640
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
