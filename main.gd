@@ -9,7 +9,7 @@ extends Node2D
 
 @onready var secondMap := preload("res://Overworld/overworld.tscn")
 
-func _ready() -> void:
-	var secondMapInstance = secondMap.instantiate()
-	add_child(secondMapInstance)
-	secondMapInstance.position = Vector2(0,-24*Globals.TILE_SIZE)
+#func _ready() -> void:
+	#var secondMapInstance = secondMap.instantiate()
+	#add_child(secondMapInstance)
+	#secondMapInstance.position = Vector2(0,-24*Globals.TILE_SIZE)
