@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dniwxsy0u3ga6"
-path="res://.godot/imported/cat_variant.png-9f8ab90029a0150c93e021b2f9ecae4a.ctex"
+uid="uid://bkm80gt2dg6p6"
+path="res://.godot/imported/tallWheat.png-3a6cad6bb3a55c5980a452418215911f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/cat_variant.png"
-dest_files=["res://.godot/imported/cat_variant.png-9f8ab90029a0150c93e021b2f9ecae4a.ctex"]
+source_file="res://Overworld/0_Tiles/3_Interactives/tallWheat/tallWheat.png"
+dest_files=["res://.godot/imported/tallWheat.png-3a6cad6bb3a55c5980a452418215911f.ctex"]
 
 [params]
 
