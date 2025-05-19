@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6nbii1c1bnuc"]
+[gd_scene load_steps=7 format=3 uid="uid://c6nbii1c1bnuc"]
 
 [ext_resource type="Script" uid="uid://b3enigg07och6" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dqkwnw68aqq71" path="res://Player/player.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://qhvrd0ywc85l" path="res://Overworld/Martens/sund.tscn" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://j3rpiiqfmt12" path="res://Overworld/Martens/sund_fields.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://btha5xug2urfc" path="res://Overworld/Martens/clairvoyant_rise.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ir611ly0qdrp" path="res://Overworld/2_Fillers/filler_martens_trees_green.tscn" id="6_7mycd"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -12,7 +13,43 @@ script = ExtResource("1_h2yge")
 
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
 z_index = 1
-position = Vector2(144, 144)
+position = Vector2(896, 336)
+
+[node name="Fillers" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Filler_Martens_Trees_Green" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(384, -768)
+
+[node name="Filler_Martens_Trees_Green2" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(768, -768)
+
+[node name="Filler_Martens_Trees_Green3" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(768, 384)
+
+[node name="Filler_Martens_Trees_Green4" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(-384, -384)
+
+[node name="Filler_Martens_Trees_Green5" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(1152, -768)
+
+[node name="Filler_Martens_Trees_Green6" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(-384, -768)
+
+[node name="Filler_Martens_Trees_Green7" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(384, -1152)
+
+[node name="Filler_Martens_Trees_Green8" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(384, -1536)
+
+[node name="Filler_Martens_Trees_Green9" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(0, -1536)
+
+[node name="Filler_Martens_Trees_Green10" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(-384, -1152)
+
+[node name="Filler_Martens_Trees_Green11" parent="Fillers" instance=ExtResource("6_7mycd")]
+position = Vector2(-384, -1536)
 
 [node name="Sund" parent="." instance=ExtResource("3_lquwl")]
 
