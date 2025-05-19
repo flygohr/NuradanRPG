@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://kuy3e7vuhrmn"]
+[gd_scene load_steps=10 format=3 uid="uid://dctbwjndfn6bc"]
 
-[ext_resource type="Script" uid="uid://c70grmvqgri2h" path="res://Overworld/tall_grass.gd" id="1_51plf"]
-[ext_resource type="Texture2D" uid="uid://d2sile75ekc74" path="res://Overworld/wheat.png" id="2_51plf"]
+[ext_resource type="Script" uid="uid://c70grmvqgri2h" path="res://Overworld/0_Tiles/3_Interactives/trigger_walkthrough_interaction.gd" id="1_7aibg"]
+[ext_resource type="Texture2D" uid="uid://cmw1558fevquk" path="res://Overworld/0_Tiles/3_Interactives/tallGrass/tallGrass.png" id="2_ubabf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bvuw"]
 size = Vector2(14, 14)
@@ -94,18 +94,18 @@ _data = {
 }
 
 [node name="TallGrass" type="Area2D"]
-script = ExtResource("1_51plf")
+script = ExtResource("1_7aibg")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(8, -8)
-texture = ExtResource("2_51plf")
+texture = ExtResource("2_ubabf")
 hframes = 8
 
 [node name="Overlay" type="Sprite2D" parent="."]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(8, -8)
-texture = ExtResource("2_51plf")
+texture = ExtResource("2_ubabf")
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

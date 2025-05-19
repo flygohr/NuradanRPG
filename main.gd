@@ -7,7 +7,7 @@ extends Node2D
 
 
 
-@onready var secondMap := preload("res://Overworld/overworld.tscn")
+# @onready var secondMap := preload("res://Overworld/overworld.tscn")
 
 #func _ready() -> void:
 	#var secondMapInstance = secondMap.instantiate()

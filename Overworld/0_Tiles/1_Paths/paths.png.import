@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuxd2lf8e1cfx"
-path="res://.godot/imported/Martens.png-ea07be95909f8a376e3d4c5b88d80a84.ctex"
+uid="uid://bya6mf1b51psi"
+path="res://.godot/imported/paths.png-2979e8850dadf42b12bd467af7284b7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/Martens.png"
-dest_files=["res://.godot/imported/Martens.png-ea07be95909f8a376e3d4c5b88d80a84.ctex"]
+source_file="res://Overworld/0_Tiles/1_Paths/paths.png"
+dest_files=["res://.godot/imported/paths.png-2979e8850dadf42b12bd467af7284b7a.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 extends TileMapLayer
 
-@onready var tall_grass_scene = preload("res://Overworld/tall_grass.tscn")
-@onready var tall_wheat_scene = preload("res://Overworld/tall_wheat.tscn")
+@onready var tall_grass_scene = preload("res://Overworld/0_Tiles/3_Interactives/tallGrass/tall_grass.tscn")
+@onready var tall_wheat_scene = preload("res://Overworld/0_Tiles/3_Interactives/tallWheat/tall_wheat.tscn")
 
 func _ready():
 	find_and_spawn_interactive_tiles()

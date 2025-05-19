@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bya6mf1b51psi"
-path="res://.godot/imported/paths.png-6149633befb0a77368f970774cc88a65.ctex"
+uid="uid://tx1tjsfkp42q"
+path="res://.godot/imported/props.png-30dc349153f1afe071a963b550a95613.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/paths.png"
-dest_files=["res://.godot/imported/paths.png-6149633befb0a77368f970774cc88a65.ctex"]
+source_file="res://Overworld/0_Tiles/4_Props/props.png"
+dest_files=["res://.godot/imported/props.png-30dc349153f1afe071a963b550a95613.ctex"]
 
 [params]
 

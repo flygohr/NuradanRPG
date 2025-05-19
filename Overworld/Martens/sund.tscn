@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://qhvrd0ywc85l"]
+
+[ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_75dyw"]
+
+[node name="Sund" instance=ExtResource("1_75dyw")]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6nbii1c1bnuc"]
+[gd_scene load_steps=6 format=3 uid="uid://c6nbii1c1bnuc"]
 
-[ext_resource type="PackedScene" uid="uid://bekm13xm38nmh" path="res://Overworld/overworld.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://b3enigg07och6" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dqkwnw68aqq71" path="res://Player/player.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://dadwuyvbg5dpx" path="res://Overworld/sund_fields.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://qhvrd0ywc85l" path="res://Overworld/Martens/sund.tscn" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://j3rpiiqfmt12" path="res://Overworld/Martens/sund_fields.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://btha5xug2urfc" path="res://Overworld/Martens/clairvoyant_rise.tscn" id="5_lquwl"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -13,7 +14,10 @@ script = ExtResource("1_h2yge")
 z_index = 1
 position = Vector2(144, 144)
 
-[node name="Sund" parent="." instance=ExtResource("1_0xm2m")]
+[node name="Sund" parent="." instance=ExtResource("3_lquwl")]
 
-[node name="SundFields" parent="." instance=ExtResource("4_1bvp3")]
+[node name="Sund_Fields" parent="." instance=ExtResource("4_7mycd")]
 position = Vector2(384, -384)
+
+[node name="Clairvoyant_Rise" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(0, -1152)

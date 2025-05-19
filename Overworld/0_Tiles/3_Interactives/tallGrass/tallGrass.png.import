@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmw1558fevquk"
-path="res://.godot/imported/tallGrass.png-4a202494801c9ea0e40135aaf0dfeaf2.ctex"
+path="res://.godot/imported/tallGrass.png-822c94c028aa5370599f48bcfac13a9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tallGrass.png"
-dest_files=["res://.godot/imported/tallGrass.png-4a202494801c9ea0e40135aaf0dfeaf2.ctex"]
+source_file="res://Overworld/0_Tiles/3_Interactives/tallGrass/tallGrass.png"
+dest_files=["res://.godot/imported/tallGrass.png-822c94c028aa5370599f48bcfac13a9e.ctex"]
 
 [params]
 

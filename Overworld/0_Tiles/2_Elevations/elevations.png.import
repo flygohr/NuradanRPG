@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tx1tjsfkp42q"
-path="res://.godot/imported/props.png-35a5930b868dd477c39934075283844b.ctex"
+uid="uid://bjradiqvqiwyc"
+path="res://.godot/imported/elevations.png-aacd200d20d0a65cab3162bcd6e3fe61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/props.png"
-dest_files=["res://.godot/imported/props.png-35a5930b868dd477c39934075283844b.ctex"]
+source_file="res://Overworld/0_Tiles/2_Elevations/elevations.png"
+dest_files=["res://.godot/imported/elevations.png-aacd200d20d0a65cab3162bcd6e3fe61.ctex"]
 
 [params]
 

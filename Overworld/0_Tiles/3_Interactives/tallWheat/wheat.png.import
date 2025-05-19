@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2sile75ekc74"
-path="res://.godot/imported/wheat.png-dd06bd4b78418580243273fef4f0306a.ctex"
+path="res://.godot/imported/wheat.png-c33bd9b8c2b13d6625b5ea9299193d20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Overworld/wheat.png"
-dest_files=["res://.godot/imported/wheat.png-dd06bd4b78418580243273fef4f0306a.ctex"]
+source_file="res://Overworld/0_Tiles/3_Interactives/tallWheat/wheat.png"
+dest_files=["res://.godot/imported/wheat.png-c33bd9b8c2b13d6625b5ea9299193d20.ctex"]
 
 [params]
 
