@@ -13,43 +13,54 @@ script = ExtResource("1_h2yge")
 
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
 z_index = 1
-position = Vector2(896, 336)
+position = Vector2(48, -32)
 
 [node name="Fillers" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Filler_Martens_Trees_Green" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(384, -768)
+script = null
 
 [node name="Filler_Martens_Trees_Green2" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(768, -768)
+script = null
 
 [node name="Filler_Martens_Trees_Green3" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(768, 384)
+script = null
 
 [node name="Filler_Martens_Trees_Green4" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(-384, -384)
+script = null
 
 [node name="Filler_Martens_Trees_Green5" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(1152, -768)
+script = null
 
 [node name="Filler_Martens_Trees_Green6" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(-384, -768)
+script = null
 
 [node name="Filler_Martens_Trees_Green7" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(384, -1152)
+script = null
 
 [node name="Filler_Martens_Trees_Green8" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(384, -1536)
+script = null
 
 [node name="Filler_Martens_Trees_Green9" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(0, -1536)
+script = null
 
 [node name="Filler_Martens_Trees_Green10" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(-384, -1152)
+script = null
 
 [node name="Filler_Martens_Trees_Green11" parent="Fillers" instance=ExtResource("6_7mycd")]
 position = Vector2(-384, -1536)
+script = null
 
 [node name="Sund" parent="." instance=ExtResource("3_lquwl")]
 

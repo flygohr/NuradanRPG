@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://csoibasxi5te2" path="res://Overworld/0_Tiles/3_Interactives/interactives.png" id="4_teenj"]
 [ext_resource type="Script" uid="uid://dpub5i6ewko0d" path="res://Overworld/0_Tiles/3_Interactives/interactive.gd" id="5_7yv80"]
 [ext_resource type="Texture2D" uid="uid://tx1tjsfkp42q" path="res://Overworld/0_Tiles/4_Props/props.png" id="6_nbeeo"]
-[ext_resource type="Script" uid="uid://d4kcqp60mfj0y" path="res://Overworld/1_Map_template/map_area.gd" id="8_0yw8r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2pad"]
 texture = ExtResource("1_7v7dw")
@@ -414,6 +413,9 @@ custom_data_layer_0/name = "tileType"
 custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_4uj07")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vp6i"]
+size = Vector2(384, 384)
+
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_6vp6i")
@@ -445,7 +447,9 @@ tile_set = SubResource("TileSet_5wvds")
 
 [node name="Map Area" type="Area2D" parent="."]
 unique_name_in_owner = true
-script = ExtResource("8_0yw8r")
 
-[connection signal="area_entered" from="Map Area" to="." method="_on_map_area_area_entered"]
-[connection signal="area_exited" from="Map Area" to="." method="_on_map_area_area_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map Area"]
+visible = false
+position = Vector2(192, 192)
+shape = SubResource("RectangleShape2D_6vp6i")
+debug_color = Color(0.663548, 0.511215, 0.103926, 0.42)
