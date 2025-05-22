@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=4 uid="uid://btha5xug2urfc"]
+[gd_scene load_steps=4 format=4 uid="uid://btha5xug2urfc"]
 
 [ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_knd4q"]
+[ext_resource type="PackedScene" uid="uid://b38e3qp7n8br3" path="res://Overworld/1_Map_template/area_connection.tscn" id="2_nc6wb"]
+[ext_resource type="PackedScene" uid="uid://ir611ly0qdrp" path="res://Overworld/2_Fillers/filler_martens_trees_green.tscn" id="3_f2st8"]
 
 [node name="Clairvoyant_Rise" instance=ExtResource("1_knd4q")]
 
@@ -18,3 +20,8 @@ tile_map_data = PackedByteArray()
 
 [node name="Props" parent="." index="4"]
 tile_map_data = PackedByteArray()
+
+[node name="AreaConnection" parent="Connections" index="0" instance=ExtResource("2_nc6wb")]
+position = Vector2(0, 768)
+connection = ExtResource("3_f2st8")
+offset_x = -1
