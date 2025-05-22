@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var connections := %Connections
+var connectedAreas := []
 
 func _ready() -> void:
 	# creating custom "area detection" shape at runtime to account for different area shapes
@@ -27,8 +28,9 @@ func _on_map_area_area_entered(area: Area2D) -> void:
 		print("Player entered area " + str(self.name))
 		# I should load connected chunks here
 		load_connections()
+		#Navigation.remove_area_from_connections_list(self)
 		print("This is : " + str(self))
-		#Navigation.remove_area_from_connections_list(self) # keeps the area upon deloading other areas
+		#connectedAreas.erase(self)
 		# check the resourceloader thing
 		# learn the damn signals so I can have a black transition upon starting to wait for all areas to load
 		# https://www.reddit.com/r/godot/comments/1kr93lx/comment/mtdjpt4/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
@@ -37,7 +39,7 @@ func _on_map_area_area_entered(area: Area2D) -> void:
 func _on_map_area_area_exited(area: Area2D) -> void:
 	if area is PlayerArea:
 		print("Player exited area " + str(self.name))
-		unload_connections()
+		#unload_connections()
 		# I should de-load connected chunks here
 
 func load_connections():
@@ -56,23 +58,21 @@ func load_connections():
 		
 		# load the resource
 		print("This is the connection: " + str(connection))
-		var connected_map_loader = ResourceLoader.load_threaded_request(connection.connection.resource_path)
-		var connected_map = ResourceLoader.load_threaded_get(connection.connection.resource_path).instantiate()
+		ResourceLoader.load_threaded_request(connection.connection.resource_path)
+		var connected_map_scene = ResourceLoader.load_threaded_get(connection.connection.resource_path)
+		var connected_map = connected_map_scene.instantiate()
+		connectedAreas.append(connected_map)
 		# print(connection.connection.resource_path)
-		connected_map.position = Vector2i(position_x+offset_x,position_y+offset_y) #this should be global
-		parent.add_child(connected_map)
-		Navigation.add_area_to_connections_list(connected_map)
-	print("This is the current connections list: " + str(Navigation.current_connections_list))
+		if connectedAreas.has(connected_map): # should display nothing if it's already instanced and positioned
+			connected_map.position = to_global(Vector2i(position_x+offset_x,position_y+offset_y))
+			parent.add_child(connected_map) # this needs to be done by the navigation
+	print("This is the current connections list: " + str(connectedAreas))
 
 func unload_connections():
 	print("Unloading connections for " + str(self.name) + " here")
 	# need to unload everything but the one I traveled to
 	
-	for area in Navigation.current_connections_list:
+	for area in connectedAreas:
 		print("Currently unloading this area: " + str(area))
-		area.unload_self()
-		
-	Navigation.current_connections_list = []
-
-func unload_self():
-	queue_free()
+		connectedAreas.erase(area)
+		area.queue_free()

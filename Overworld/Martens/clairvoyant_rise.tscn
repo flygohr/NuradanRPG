@@ -21,7 +21,16 @@ tile_map_data = PackedByteArray()
 [node name="Props" parent="." index="4"]
 tile_map_data = PackedByteArray()
 
-[node name="AreaConnection" parent="Connections" index="0" instance=ExtResource("2_nc6wb")]
+[node name="Filler" parent="Connections" index="0" instance=ExtResource("2_nc6wb")]
 position = Vector2(0, 768)
+connection = ExtResource("3_f2st8")
+offset_x = -1
+
+[node name="Filler2" parent="Connections" index="1" instance=ExtResource("2_nc6wb")]
+position = Vector2(0, 384)
+connection = ExtResource("3_f2st8")
+offset_x = -1
+
+[node name="Filler3" parent="Connections" index="2" instance=ExtResource("2_nc6wb")]
 connection = ExtResource("3_f2st8")
 offset_x = -1

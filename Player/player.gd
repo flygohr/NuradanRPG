@@ -2,7 +2,7 @@ extends Sprite2D
 
 class_name Player
 
-@export var walk_speed = 5.0
+@export var walk_speed = 20.0
 
 @onready var animTree = $AnimationTree
 @onready var animState = animTree.get("parameters/playback")
