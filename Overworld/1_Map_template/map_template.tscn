@@ -450,5 +450,7 @@ script = ExtResource("8_0yw8r")
 [node name="Connections" type="Node2D" parent="."]
 unique_name_in_owner = true
 
+[node name="Fillers" type="Node2D" parent="."]
+
 [connection signal="area_entered" from="Map Area" to="." method="_on_map_area_area_entered"]
 [connection signal="area_exited" from="Map Area" to="." method="_on_map_area_area_exited"]

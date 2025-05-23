@@ -1,9 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://dqkwnw68aqq71"]
+[gd_scene load_steps=38 format=3 uid="uid://dqkwnw68aqq71"]
 
 [ext_resource type="Script" uid="uid://c4p7201shjrth" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://bkhk8sx5g26g5" path="res://Player/PlayerCharacterCat.png" id="1_btcbx"]
 [ext_resource type="Script" uid="uid://cajmnrwn745n" path="res://Player/player_collision.gd" id="3_btcbx"]
 [ext_resource type="Script" uid="uid://bniw5x18yrsca" path="res://Player/camera.gd" id="3_gwnis"]
+[ext_resource type="Script" uid="uid://c44ibc6caf8xx" path="res://Player/player_camera_area.gd" id="4_k53q1"]
 
 [sub_resource type="Animation" id="Animation_4ntmi"]
 resource_name = "idleDown"
@@ -355,6 +356,9 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_gu6f8")
 states/Walk/position = Vector2(713, 97.5556)
 graph_offset = Vector2(231, -76)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwnis"]
+size = Vector2(240, 160)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ntmi"]
 size = Vector2(14, 14)
 
@@ -386,6 +390,14 @@ parameters/Walk/blend_position = Vector2(-0.893258, 0.575904)
 offset = Vector2(8, -16)
 zoom = Vector2(4, 4)
 script = ExtResource("3_gwnis")
+
+[node name="PlayerCameraArea" type="Area2D" parent="Camera"]
+script = ExtResource("4_k53q1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera/PlayerCameraArea"]
+position = Vector2(8, -16)
+shape = SubResource("RectangleShape2D_gwnis")
+debug_color = Color(0.737505, 0.360001, 0.766677, 0.42)
 
 [node name="PlayerCollission" type="Area2D" parent="."]
 script = ExtResource("3_btcbx")

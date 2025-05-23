@@ -17,7 +17,5 @@ position = Vector2(384, 0)
 connection = ExtResource("4_ic7fh")
 offset_y = -1
 
-[node name="Filler" parent="Connections" index="2" instance=ExtResource("2_2giyw")]
-connection = ExtResource("5_6vt8n")
-offset_x = -1
-offset_y = -1
+[node name="Filler_Martens_Trees_Green" parent="Fillers" index="0" instance=ExtResource("5_6vt8n")]
+position = Vector2(-384, -384)
