@@ -1,53 +1,26 @@
 extends Node2D
+class_name GameMap
 
-@onready var connections := %Connections
-var connectedAreas := []
+@onready var connections := $Connections
+
+var area_increase := 4
 
 func _ready() -> void:
-	# creating custom "area detection" shape at runtime to account for different area shapes
-	var mapGround := %Ground
-	var mapArea := %"Map Area"
-	# read map size
-	var mapSize = mapGround.get_used_rect().size
-	# print map size
-	print("Area " + str(self.name) + " is " + str(mapSize.x) + " tiles wide")
-	print("Area " + str(self.name) + " is " + str(mapSize.y) + " tiles tall")
-
-	# create collision shape
-	var mapAreaCollision := CollisionShape2D.new()
-	var mapAreaCollisionShape := RectangleShape2D.new()
-	mapAreaCollision.debug_color = Color(0.65,0.5,0.1,0.3)
-	mapAreaCollisionShape.size = Vector2((mapSize.x+6)*Globals.TILE_SIZE, (mapSize.y+6)*Globals.TILE_SIZE)
-	mapAreaCollision.position = Vector2((mapSize.x*Globals.TILE_SIZE)/2, (mapSize.y*Globals.TILE_SIZE)/2)
-	mapAreaCollision.shape = mapAreaCollisionShape
-	mapArea.add_child(mapAreaCollision)
-
+	create_area()
 
 func _on_map_area_area_entered(area: Area2D) -> void:
 	if area is PlayerArea:
 		print("Player entered area " + str(self.name))
-		# I should load connected chunks here
 		load_connections()
-		#Navigation.remove_area_from_connections_list(self)
-		print("This is : " + str(self))
-		#connectedAreas.erase(self)
-		# check the resourceloader thing
-		# learn the damn signals so I can have a black transition upon starting to wait for all areas to load
-		# https://www.reddit.com/r/godot/comments/1kr93lx/comment/mtdjpt4/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-		# I should play the UI area name thing here
 
 func _on_map_area_area_exited(area: Area2D) -> void:
 	if area is PlayerArea:
 		print("Player exited area " + str(self.name))
-		#unload_connections()
-		# I should de-load connected chunks here
+		unload_connections()
 
 func load_connections():
-	print("Loading " + str(self.name) + " connections")
-	# need to loop through markers here
-	var connections_list = connections.get_children()
-	var parent = self.get_parent()
-	for connection in connections_list:
+	print("Loading connections for " + str(self.name) + " here")
+	for connection in connections.get_children():
 		# getting connection data
 		var offset_x := int(connection.offset_x*Globals.TILE_SIZE*Globals.CHUNK_SIZE)
 		var offset_y = int(connection.offset_y*Globals.TILE_SIZE*Globals.CHUNK_SIZE)
@@ -58,21 +31,31 @@ func load_connections():
 		
 		# load the resource
 		print("This is the connection: " + str(connection))
-		ResourceLoader.load_threaded_request(connection.connection.resource_path)
-		var connected_map_scene = ResourceLoader.load_threaded_get(connection.connection.resource_path)
+		var connected_map_scene = load(connection.connection.resource_path) # giant bug here, idk why it crashes when changing map
 		var connected_map = connected_map_scene.instantiate()
-		connectedAreas.append(connected_map)
 		# print(connection.connection.resource_path)
-		if connectedAreas.has(connected_map): # should display nothing if it's already instanced and positioned
-			connected_map.position = to_global(Vector2i(position_x+offset_x,position_y+offset_y))
-			parent.add_child(connected_map) # this needs to be done by the navigation
-	print("This is the current connections list: " + str(connectedAreas))
+		connected_map.position = to_global(Vector2i(position_x+offset_x,position_y+offset_y))
+		Navigation.load_connection(connected_map)
+	print("Loading connections for " + str(self.name) + " here")
 
 func unload_connections():
 	print("Unloading connections for " + str(self.name) + " here")
-	# need to unload everything but the one I traveled to
-	
-	for area in connectedAreas:
-		print("Currently unloading this area: " + str(area))
-		connectedAreas.erase(area)
-		area.queue_free()
+
+func create_area():
+	# creating custom "area detection" shape at runtime to account for different area shapes
+	var mapGround := $Ground
+	var mapArea := $"Map Area"
+	# read map size
+	var mapSize = mapGround.get_used_rect().size
+	# print map size
+	# print("Area " + str(self.name) + " is " + str(mapSize.x) + " tiles wide")
+	# print("Area " + str(self.name) + " is " + str(mapSize.y) + " tiles tall")
+
+	# create collision shape with extra size to give room to preloading
+	var mapAreaCollision := CollisionShape2D.new()
+	var mapAreaCollisionShape := RectangleShape2D.new()
+	mapAreaCollision.debug_color = Color(0.65,0.5,0.1,0.3)
+	mapAreaCollisionShape.size = Vector2((mapSize.x+area_increase)*Globals.TILE_SIZE, (mapSize.y+area_increase)*Globals.TILE_SIZE)
+	mapAreaCollision.position = Vector2((mapSize.x*Globals.TILE_SIZE)/2, (mapSize.y*Globals.TILE_SIZE)/2)
+	mapAreaCollision.shape = mapAreaCollisionShape
+	mapArea.add_child(mapAreaCollision)
