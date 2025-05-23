@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://btha5xug2urfc"]
+[gd_scene load_steps=5 format=4 uid="uid://btha5xug2urfc"]
 
 [ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_knd4q"]
 [ext_resource type="PackedScene" uid="uid://b38e3qp7n8br3" path="res://Overworld/1_Map_template/area_connection.tscn" id="2_nc6wb"]
-[ext_resource type="PackedScene" uid="uid://qhvrd0ywc85l" path="res://Overworld/Martens/sund.tscn" id="3_cmcbu"]
-[ext_resource type="PackedScene" uid="uid://ir611ly0qdrp" path="res://Overworld/2_Fillers/filler_martens_trees_green.tscn" id="3_f2st8"]
+[ext_resource type="PackedScene" uid="uid://qhvrd0ywc85l" path="res://Overworld/Martens/sund.tscn" id="3_f2st8"]
 [ext_resource type="PackedScene" uid="uid://j3rpiiqfmt12" path="res://Overworld/Martens/sund_fields.tscn" id="4_cmcbu"]
 
 [node name="Clairvoyant_Rise" instance=ExtResource("1_knd4q")]
@@ -23,33 +22,10 @@ tile_map_data = PackedByteArray()
 [node name="Props" parent="." index="4"]
 tile_map_data = PackedByteArray()
 
-[node name="Sund" parent="Connections" index="0" instance=ExtResource("2_nc6wb")]
-position = Vector2(0, 1152)
-connection = ExtResource("3_cmcbu")
-offset_x = -1
-
-[node name="Sund Fields" parent="Connections" index="1" instance=ExtResource("2_nc6wb")]
+[node name="Sund Fields" parent="Connections" index="0" instance=ExtResource("2_nc6wb")]
 position = Vector2(384, 768)
 connection = ExtResource("4_cmcbu")
-offset_x = -1
 
-[node name="Filler_Martens_Trees_Green" parent="Fillers" index="0" instance=ExtResource("3_f2st8")]
-position = Vector2(384, 384)
-
-[node name="Filler_Martens_Trees_Green2" parent="Fillers" index="1" instance=ExtResource("3_f2st8")]
-position = Vector2(384, 0)
-
-[node name="Filler_Martens_Trees_Green3" parent="Fillers" index="2" instance=ExtResource("3_f2st8")]
-position = Vector2(384, -384)
-
-[node name="Filler_Martens_Trees_Green4" parent="Fillers" index="3" instance=ExtResource("3_f2st8")]
-position = Vector2(0, -384)
-
-[node name="Filler_Martens_Trees_Green5" parent="Fillers" index="4" instance=ExtResource("3_f2st8")]
-position = Vector2(-384, -384)
-
-[node name="Filler_Martens_Trees_Green6" parent="Fillers" index="5" instance=ExtResource("3_f2st8")]
-position = Vector2(-384, 0)
-
-[node name="Filler_Martens_Trees_Green7" parent="Fillers" index="6" instance=ExtResource("3_f2st8")]
-position = Vector2(-384, 384)
+[node name="Sund" parent="Connections" index="1" instance=ExtResource("2_nc6wb")]
+position = Vector2(0, 1152)
+connection = ExtResource("3_f2st8")
