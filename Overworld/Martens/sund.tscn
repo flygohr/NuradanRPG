@@ -1,17 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://qhvrd0ywc85l"]
+[gd_scene load_steps=2 format=3 uid="uid://qhvrd0ywc85l"]
 
 [ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_75dyw"]
-[ext_resource type="PackedScene" uid="uid://b38e3qp7n8br3" path="res://Overworld/1_Map_template/area_connection.tscn" id="2_2pjfp"]
-[ext_resource type="PackedScene" uid="uid://btha5xug2urfc" path="res://Overworld/Martens/clairvoyant_rise.tscn" id="3_kemm8"]
-[ext_resource type="PackedScene" uid="uid://j3rpiiqfmt12" path="res://Overworld/Martens/sund_fields.tscn" id="4_kemm8"]
 
 [node name="Sund" instance=ExtResource("1_75dyw")]
-
-[node name="Clairvoyant Rise" parent="Connections" index="0" instance=ExtResource("2_2pjfp")]
-connection = ExtResource("3_kemm8")
-offset_y = -3
-
-[node name="Sund Fields" parent="Connections" index="1" instance=ExtResource("2_2pjfp")]
-position = Vector2(384, 0)
-connection = ExtResource("4_kemm8")
-offset_y = -1
+connected_zones = Dictionary[String, Vector2]({
+"uid://j3rpiiqfmt12": Vector2(384, -384)
+})

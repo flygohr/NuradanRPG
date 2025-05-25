@@ -1,9 +1,9 @@
 extends Node2D
-class_name GameMap
+class_name Zone
 
-@onready var connections := $Connections
+@export var connected_zones: Dictionary[String, Vector2]
 
-var area_increase := 4
+var area_increase := 4 # Extra tiles inbetween zones detection (for preloading and waiting to deload)
 
 func _ready() -> void:
 	create_area()
@@ -11,35 +11,15 @@ func _ready() -> void:
 func _on_map_area_area_entered(area: Area2D) -> void:
 	if area is PlayerArea:
 		print("Player entered area " + str(self.name))
-		load_connections()
+		SignalBus.entered_zone.emit(scene_file_path)
 
 func _on_map_area_area_exited(area: Area2D) -> void:
 	if area is PlayerArea:
 		print("Player exited area " + str(self.name))
-		unload_connections()
 
-func load_connections():
-	print("Loading connections for " + str(self.name) + " here")
-	for connection in connections.get_children():
-		# getting connection data
-		var offset_x := int(connection.offset_x*Globals.TILE_SIZE*Globals.CHUNK_SIZE)
-		var offset_y = int(connection.offset_y*Globals.TILE_SIZE*Globals.CHUNK_SIZE)
-		var position_x := int(connection.position.x)
-		var position_y := int(connection.position.y)
-
-		print("Area " + str(self.name) + " connects with " + str(connection.name) +  " starting at position " + str(position_x) + ", " + str(int(position_y)) + ", with offset X " + str(offset_x) + " and offset Y " + str(offset_y))
-		
-		# load the resource
-		print("This is the connection: " + str(connection))
-		var connected_map_scene = load(connection.connection.resource_path) # giant bug here, idk why it crashes when changing map
-		var connected_map = connected_map_scene.instantiate()
-		# print(connection.connection.resource_path)
-		connected_map.position = to_global(Vector2i(position_x+offset_x,position_y+offset_y))
-		Navigation.load_connection(connected_map)
-	print("Loading connections for " + str(self.name) + " here")
-
-func unload_connections():
-	print("Unloading connections for " + str(self.name) + " here")
+## Returns the dictionary of adjacent zones
+func get_connected_zones() -> Dictionary[String, Vector2]:
+	return connected_zones
 
 func create_area():
 	# creating custom "area detection" shape at runtime to account for different area shapes
