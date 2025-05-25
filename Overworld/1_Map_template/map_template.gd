@@ -11,11 +11,7 @@ func _ready() -> void:
 func _on_map_area_area_entered(area: Area2D) -> void:
 	if area is PlayerArea:
 		print("Player entered area " + str(self.name))
-		SignalBus.entered_zone.emit(scene_file_path)
-
-func _on_map_area_area_exited(area: Area2D) -> void:
-	if area is PlayerArea:
-		print("Player exited area " + str(self.name))
+		SignalBus.zone_changed.emit(scene_file_path)
 
 ## Returns the dictionary of adjacent zones
 func get_connected_zones() -> Dictionary[String, Vector2]:
@@ -38,4 +34,4 @@ func create_area():
 	mapAreaCollisionShape.size = Vector2((mapSize.x+area_increase)*Globals.TILE_SIZE, (mapSize.y+area_increase)*Globals.TILE_SIZE)
 	mapAreaCollision.position = Vector2((mapSize.x*Globals.TILE_SIZE)/2, (mapSize.y*Globals.TILE_SIZE)/2)
 	mapAreaCollision.shape = mapAreaCollisionShape
-	mapArea.add_child(mapAreaCollision)
+	mapArea.call_deferred("add_child", mapAreaCollision)

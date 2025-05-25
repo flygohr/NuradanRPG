@@ -2,5 +2,5 @@ extends Node
 
 @warning_ignore_start("unused_signal")
 
-signal entered_zone(path: String)
-signal exited_zone()
+signal zone_changed(path: String)
+signal scene_loaded(previous_scene_path : String, scene_path : String)
