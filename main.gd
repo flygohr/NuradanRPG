@@ -14,10 +14,9 @@ func change_zone(zone_path : String):
 	var connected_zones = zone.get_connected_zones()
 	for connection in connected_zones.keys():
 		var connected_zone = load(connection).instantiate() # this must be threaded
-		connected_zone.position = zone.position + connected_zones[connection] # this positioning is off
+		connected_zone.position = zone.position + connected_zones[connection] # this positioning is off, might need to recalculate offsets
 		world.call_deferred("add_child", connected_zone)
 		
-	
 func load_zone(path: String):
 	var zone = load(path).instantiate()
 	world.call_deferred("add_child",zone)
