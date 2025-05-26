@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b48gq33vn1cad"]
+
+[ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_hd7in"]
+
+[node name="Redrock Span" instance=ExtResource("1_hd7in")]
+connected_zones = Dictionary[String, Vector2]({
+"uid://bycigh15ekbdj": Vector2(1, 0)
+})
+
+[node name="Paths" parent="." index="1"]
+tile_map_data = PackedByteArray()
+
+[node name="Elevations" parent="." index="2"]
+tile_map_data = PackedByteArray()
+
+[node name="Interactives" parent="." index="3"]
+tile_map_data = PackedByteArray()
+
+[node name="Props" parent="." index="4"]
+tile_map_data = PackedByteArray()

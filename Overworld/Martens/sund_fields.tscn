@@ -4,8 +4,8 @@
 
 [node name="Sund_Fields" instance=ExtResource("1_o1m52")]
 connected_zones = Dictionary[String, Vector2]({
-"uid://btha5xug2urfc": Vector2(-384, -768),
-"uid://qhvrd0ywc85l": Vector2(-384, 384)
+"uid://btha5xug2urfc": Vector2(-1, -2),
+"uid://qhvrd0ywc85l": Vector2(-1, 1)
 })
 
 [node name="Ground" parent="." index="0"]

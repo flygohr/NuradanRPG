@@ -3,7 +3,7 @@ class_name Zone
 
 @export var connected_zones: Dictionary[String, Vector2]
 
-var area_increase := 4 # Extra tiles inbetween zones detection (for preloading and waiting to deload)
+var area_increase := 0 # Extra tiles inbetween zones detection (for preloading and waiting to deload)
 
 func _ready() -> void:
 	create_area()
