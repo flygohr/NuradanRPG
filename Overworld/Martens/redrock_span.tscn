@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b48gq33vn1cad"]
+
+[ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_hd7in"]
+[ext_resource type="PackedScene" uid="uid://ir611ly0qdrp" path="res://Overworld/2_Fillers/filler_martens_trees_green.tscn" id="2_pch4x"]
+
+[node name="Redrock Span" instance=ExtResource("1_hd7in")]
+connected_zones = Dictionary[int, Vector2i]({
+4: Vector2i(1, 0)
+})
+
+[node name="Paths" parent="." index="1"]
+tile_map_data = PackedByteArray()
+
+[node name="Elevations" parent="." index="2"]
+tile_map_data = PackedByteArray()
+
+[node name="Interactives" parent="." index="3"]
+tile_map_data = PackedByteArray()
+
+[node name="Props" parent="." index="4"]
+tile_map_data = PackedByteArray()
+
+[node name="Filler_Martens_Trees_Green" parent="Fillers" index="0" instance=ExtResource("2_pch4x")]
+position = Vector2(0, 384)

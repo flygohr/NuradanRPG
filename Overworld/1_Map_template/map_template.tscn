@@ -447,8 +447,7 @@ tile_set = SubResource("TileSet_5wvds")
 unique_name_in_owner = true
 script = ExtResource("8_0yw8r")
 
-[node name="Connections" type="Node2D" parent="."]
-unique_name_in_owner = true
+[node name="Fillers" type="Node2D" parent="."]
 
 [node name="Fillers" type="Node2D" parent="."]
 

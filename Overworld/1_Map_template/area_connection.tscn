@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b38e3qp7n8br3"]
-
-[ext_resource type="Script" uid="uid://bn0hhd7gd2g0x" path="res://Overworld/1_Map_template/area_connection.gd" id="1_1q8l5"]
-
-[node name="AreaConnection" type="Marker2D"]
-script = ExtResource("1_1q8l5")
