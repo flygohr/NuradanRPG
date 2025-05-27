@@ -21,10 +21,13 @@ func change_zone_thread(zone_uid : String):
 			world.call_deferred("add_child", connected_zone)
 		print(loaded_zones)
 		
-func load_zone(path: String):
-	current_zone = load(path).instantiate()
-	loaded_zones[path] = current_zone
+func load_zone(zone_uid: String):
+	current_zone = load(zone_uid).instantiate()
+	loaded_zones[zone_uid] = current_zone
 	world.call_deferred("add_child",current_zone)
+	if thread.is_started():
+		thread.wait_to_finish()
+	thread.start(change_zone_thread.bind(zone_uid))
 
 func change_zone(zone_uid: String) -> void:
 	if thread.is_started():
