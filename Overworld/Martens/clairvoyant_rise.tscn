@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://btha5xug2urfc"]
+[gd_scene load_steps=3 format=4 uid="uid://btha5xug2urfc"]
 
 [ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_knd4q"]
+[ext_resource type="PackedScene" uid="uid://ir611ly0qdrp" path="res://Overworld/2_Fillers/filler_martens_trees_green.tscn" id="2_5dq3f"]
 
 [node name="Clairvoyant_Rise" instance=ExtResource("1_knd4q")]
 connected_zones = Dictionary[int, Vector2i]({
@@ -23,3 +24,27 @@ tile_map_data = PackedByteArray()
 
 [node name="Props" parent="." index="4"]
 tile_map_data = PackedByteArray()
+
+[node name="Filler_Martens_Trees_Green" parent="Fillers" index="0" instance=ExtResource("2_5dq3f")]
+position = Vector2(-384, 0)
+
+[node name="Filler_Martens_Trees_Green2" parent="Fillers" index="1" instance=ExtResource("2_5dq3f")]
+position = Vector2(-384, -384)
+
+[node name="Filler_Martens_Trees_Green3" parent="Fillers" index="2" instance=ExtResource("2_5dq3f")]
+position = Vector2(0, -384)
+
+[node name="Filler_Martens_Trees_Green4" parent="Fillers" index="3" instance=ExtResource("2_5dq3f")]
+position = Vector2(384, -384)
+
+[node name="Filler_Martens_Trees_Green5" parent="Fillers" index="4" instance=ExtResource("2_5dq3f")]
+position = Vector2(384, 0)
+
+[node name="Filler_Martens_Trees_Green6" parent="Fillers" index="5" instance=ExtResource("2_5dq3f")]
+position = Vector2(-384, 384)
+
+[node name="Filler_Martens_Trees_Green7" parent="Fillers" index="6" instance=ExtResource("2_5dq3f")]
+position = Vector2(384, 384)
+
+[node name="Filler_Martens_Trees_Green8" parent="Fillers" index="7" instance=ExtResource("2_5dq3f")]
+position = Vector2(-384, 768)

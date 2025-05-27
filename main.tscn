@@ -11,4 +11,4 @@ world = NodePath("World")
 y_sort_enabled = true
 
 [node name="Player" parent="World" instance=ExtResource("2_0xm2m")]
-position = Vector2(-128, -112)
+position = Vector2(48, 112)

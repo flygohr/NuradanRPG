@@ -3,7 +3,7 @@ extends Node
 
 const TILE_SIZE = 16
 const CHUNK_SIZE = 24
-var CAMERA_ZOOM := 0.7
+var CAMERA_ZOOM := 4
 var PLAYER_SPEED := 20.0
 var ZONE_DETECTION_AREA_INCREASE := 0 # Extra tiles inbetween zones detection (for preloading and waiting to deload)
 

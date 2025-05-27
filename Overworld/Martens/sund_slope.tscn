@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=4 uid="uid://b6wmwr84e51cr"]
+[gd_scene load_steps=3 format=4 uid="uid://b6wmwr84e51cr"]
 
 [ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_7rb0p"]
+[ext_resource type="PackedScene" uid="uid://ir611ly0qdrp" path="res://Overworld/2_Fillers/filler_martens_trees_green.tscn" id="2_n4gc6"]
 
 [node name="Sund Slope" instance=ExtResource("1_7rb0p")]
 connected_zones = Dictionary[int, Vector2i]({
@@ -24,3 +25,6 @@ tile_map_data = PackedByteArray()
 
 [node name="Props" parent="." index="4"]
 tile_map_data = PackedByteArray()
+
+[node name="Filler_Martens_Trees_Green" parent="Fillers" index="0" instance=ExtResource("2_n4gc6")]
+position = Vector2(-384, 768)

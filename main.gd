@@ -2,6 +2,8 @@ extends Node2D
 
 @export var world: Node2D
 
+# Big thanks to u/_mday from Reddit and their project https://github.com/m-mayday/godmon
+
 var thread: Thread # Thread to load adjacent scenes
 var loaded_zones: Dictionary[String, Node] = {}  # Dictionary of currently loaded map chunks
 var current_zone
@@ -12,6 +14,7 @@ func _ready() -> void:
 	SignalBus.zone_changed.connect(change_zone)
 	
 func change_zone_thread(zone_uid : String):
+	current_zone = loaded_zones[zone_uid]
 	var connected_zones = current_zone.get_connected_zones()
 	for connection in connected_zones.keys():
 		if not connection in loaded_zones:
