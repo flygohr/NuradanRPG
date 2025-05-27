@@ -2,8 +2,6 @@ extends Sprite2D
 
 class_name Player
 
-@export var walk_speed = 20.0
-
 @onready var animTree = $AnimationTree
 @onready var animState = animTree.get("parameters/playback")
 @onready var rayCast = $RayCast2D
@@ -130,7 +128,7 @@ func move(delta):
 	rayCast.target_position = desiredStep
 	rayCast.force_raycast_update()
 	if !rayCast.is_colliding():
-		percentMovedToNextTile += walk_speed * delta
+		percentMovedToNextTile += Globals.PLAYER_SPEED * delta
 		if percentMovedToNextTile >= 1.0:
 			position = initialPosition + (Globals.TILE_SIZE * inputDirection)
 			percentMovedToNextTile = 0.0

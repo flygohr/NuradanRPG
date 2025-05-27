@@ -1,23 +1,28 @@
 extends Node2D
 class_name Zone
 
-@export var connected_zones: Dictionary[String, Vector2]
+#TODO finish creating matches here
 
-var area_increase := 0 # Extra tiles inbetween zones detection (for preloading and waiting to deload)
+@export var connected_zones: Dictionary[Globals.ZONE_NAMES, Vector2i]
 
 func _ready() -> void:
-	create_area()
+	create_area(Globals.ZONE_DETECTION_AREA_INCREASE) # Creates the collission box that covers the entire map
 
-func _on_map_area_area_entered(area: Area2D) -> void:
+func _on_map_area_area_entered(area: Area2D) -> void: # Outputs the UID of the zone to be used for loading
 	if area is PlayerArea:
 		print("Player entered area " + str(self.name))
-		SignalBus.zone_changed.emit(scene_file_path)
+		SignalBus.zone_changed.emit(ResourceUID.id_to_text(ResourceLoader.get_resource_uid(scene_file_path)))
 
-## Returns the dictionary of adjacent zones
-func get_connected_zones() -> Dictionary[String, Vector2]:
-	return connected_zones
+# Returns the dictionary of adjacent zones UIDs and offsets
+func get_connected_zones() -> Dictionary[String, Vector2i]:
+	var connected_zones_dict : Dictionary[String, Vector2i]
+	print(connected_zones)
+	for connection in connected_zones.keys():
+		connected_zones_dict[Globals.ZONE_UIDS[connection]] = connected_zones[connection]
+	print(connected_zones_dict)
+	return connected_zones_dict
 
-func create_area():
+func create_area(increase : int) -> void:
 	# creating custom "area detection" shape at runtime to account for different area shapes
 	var mapGround := $Ground
 	var mapArea := $"Map Area"
@@ -31,7 +36,7 @@ func create_area():
 	var mapAreaCollision := CollisionShape2D.new()
 	var mapAreaCollisionShape := RectangleShape2D.new()
 	mapAreaCollision.debug_color = Color(0.65,0.5,0.1,0.3)
-	mapAreaCollisionShape.size = Vector2((mapSize.x+area_increase)*Globals.TILE_SIZE, (mapSize.y+area_increase)*Globals.TILE_SIZE)
-	mapAreaCollision.position = Vector2((mapSize.x*Globals.TILE_SIZE)/2, (mapSize.y*Globals.TILE_SIZE)/2)
+	mapAreaCollisionShape.size = Vector2i((mapSize.x+(increase*2))*Globals.TILE_SIZE, (mapSize.y+(increase*2))*Globals.TILE_SIZE)
+	mapAreaCollision.position = Vector2i((mapSize.x*Globals.TILE_SIZE)/2, (mapSize.y*Globals.TILE_SIZE)/2)
 	mapAreaCollision.shape = mapAreaCollisionShape
 	mapArea.call_deferred("add_child", mapAreaCollision)

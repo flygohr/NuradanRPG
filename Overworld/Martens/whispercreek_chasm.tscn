@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_xypj3"]
 
 [node name="Whispercreek Chasm" instance=ExtResource("1_xypj3")]
-connected_zones = Dictionary[String, Vector2]({
-"uid://b6wmwr84e51cr": Vector2(-2, -1)
+connected_zones = Dictionary[int, Vector2i]({
+3: Vector2i(-2, -1)
 })
 
 [node name="Ground" parent="." index="0"]

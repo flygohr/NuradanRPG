@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_75dyw"]
 
 [node name="Sund" instance=ExtResource("1_75dyw")]
-connected_zones = Dictionary[String, Vector2]({
-"uid://b6wmwr84e51cr": Vector2(0, 1),
-"uid://btha5xug2urfc": Vector2(0, -3),
-"uid://bycigh15ekbdj": Vector2(-2, 0),
-"uid://j3rpiiqfmt12": Vector2(1, -1)
+connected_zones = Dictionary[int, Vector2i]({
+1: Vector2i(1, -1),
+2: Vector2i(0, -3),
+3: Vector2i(0, 1),
+4: Vector2i(-2, 0)
 })

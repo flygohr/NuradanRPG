@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://Overworld/1_Map_template/map_template.tscn" id="1_hd7in"]
 
 [node name="Redrock Span" instance=ExtResource("1_hd7in")]
-connected_zones = Dictionary[String, Vector2]({
-"uid://bycigh15ekbdj": Vector2(1, 0)
+connected_zones = Dictionary[int, Vector2i]({
+4: Vector2i(1, 0)
 })
 
 [node name="Paths" parent="." index="1"]
