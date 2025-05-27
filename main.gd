@@ -19,7 +19,6 @@ func change_zone_thread(zone_uid : String):
 			loaded_zones[connection] = connected_zone
 			connected_zone.position = current_zone.position + Vector2(connected_zones[connection].x*Globals.TILE_SIZE*Globals.CHUNK_SIZE, connected_zones[connection].y*Globals.TILE_SIZE*Globals.CHUNK_SIZE) # this positioning is off, might need to recalculate offsets
 			world.call_deferred("add_child", connected_zone)
-		print(loaded_zones)
 		
 func load_zone(zone_uid: String):
 	current_zone = load(zone_uid).instantiate()

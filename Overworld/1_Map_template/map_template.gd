@@ -16,10 +16,8 @@ func _on_map_area_area_entered(area: Area2D) -> void: # Outputs the UID of the z
 # Returns the dictionary of adjacent zones UIDs and offsets
 func get_connected_zones() -> Dictionary[String, Vector2i]:
 	var connected_zones_dict : Dictionary[String, Vector2i]
-	print(connected_zones)
 	for connection in connected_zones.keys():
 		connected_zones_dict[Globals.ZONE_UIDS[connection]] = connected_zones[connection]
-	print(connected_zones_dict)
 	return connected_zones_dict
 
 func create_area(increase : int) -> void:
