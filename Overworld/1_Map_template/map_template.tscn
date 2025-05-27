@@ -449,7 +449,5 @@ script = ExtResource("8_0yw8r")
 
 [node name="Fillers" type="Node2D" parent="."]
 
-[node name="Fillers" type="Node2D" parent="."]
-
 [connection signal="area_entered" from="Map Area" to="." method="_on_map_area_area_entered"]
 [connection signal="area_exited" from="Map Area" to="." method="_on_map_area_area_exited"]
