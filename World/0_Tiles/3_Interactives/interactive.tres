@@ -1,0 +1,20 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://btrb12a4scoox"]
+
+[ext_resource type="Texture2D" uid="uid://cmw1558fevquk" path="res://World/0_Tiles/3_Interactives/tallGrass/tallGrass.png" id="1_c611a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_snugq"]
+texture = ExtResource("1_c611a")
+0:0/0 = 0
+0:0/0/custom_data_0 = "tallGrass"
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[resource]
+custom_data_layer_0/name = "tileType"
+custom_data_layer_0/type = 4
+sources/0 = SubResource("TileSetAtlasSource_snugq")

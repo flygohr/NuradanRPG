@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5jcses2ndl7s"]
 
 [ext_resource type="Script" uid="uid://x77ncy7rfxnc" path="res://ScreenshotSaver/screenshot_saver.gd" id="1_0afka"]
-[ext_resource type="PackedScene" uid="uid://j3rpiiqfmt12" path="res://Overworld/Martens/sund_fields.tscn" id="2_0afka"]
+[ext_resource type="PackedScene" uid="uid://j3rpiiqfmt12" path="res://World/Martens/sund_fields.tscn" id="2_0afka"]
 
 [node name="ScreenshotSaver" type="SubViewportContainer"]
 script = ExtResource("1_0afka")

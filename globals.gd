@@ -2,8 +2,8 @@ extends Node
 
 const TILE_SIZE = 16
 const CHUNK_SIZE = 24
-var CAMERA_ZOOM := 0.3
-var PLAYER_SPEED := 20
+var CAMERA_ZOOM := 4 # Default is 4
+var PLAYER_SPEED := 7 # Default is 7
 var ZONE_DETECTION_AREA_INCREASE := 0 # Extra tiles inbetween zones detection (for preloading and waiting to deload)
 
 enum ZONE_NAMES { 
