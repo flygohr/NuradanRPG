@@ -15,3 +15,4 @@
 	- [ ] WebGL crashes
 	- [ ] Project feels heavy despite just being some pixels, need to inspect memory usage and other optimizations
 	- [ ] Signal zone_changed doesn't work anymore
+- [ ] Different walk speed in grass, wheat, etc. Implement this
