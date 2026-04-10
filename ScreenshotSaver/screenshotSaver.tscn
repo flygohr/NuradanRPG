@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5jcses2ndl7s"]
+[gd_scene format=3 uid="uid://b5jcses2ndl7s"]
 
 [ext_resource type="Script" uid="uid://x77ncy7rfxnc" path="res://ScreenshotSaver/screenshot_saver.gd" id="1_0afka"]
 [ext_resource type="PackedScene" uid="uid://j3rpiiqfmt12" path="res://World/Martens/sund_fields.tscn" id="2_0afka"]
 
-[node name="ScreenshotSaver" type="SubViewportContainer"]
+[node name="ScreenshotSaver" type="SubViewportContainer" unique_id=1293883966]
 script = ExtResource("1_0afka")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=152787914]
 handle_input_locally = false
 size = Vector2i(768, 768)
 render_target_update_mode = 4
 
-[node name="Sund_Fields" parent="SubViewport" instance=ExtResource("2_0afka")]
+[node name="Sund_Fields" parent="SubViewport" unique_id=1426721590 instance=ExtResource("2_0afka")]
