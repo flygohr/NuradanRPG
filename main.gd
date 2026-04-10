@@ -10,8 +10,9 @@ var loaded_zones: Dictionary[String, Node] = {}  # Dictionary of currently loade
 var current_zone
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	thread = Thread.new()
-	await load_zone("uid://qhvrd0ywc85l")
+	load_zone(Globals.ZONE_UIDS[Globals.ZONE_NAMES.SUND])
 	SignalBus.zone_changed.connect(change_zone)
 	# SignalBus.zone_left.connect(unload_zones)
 	

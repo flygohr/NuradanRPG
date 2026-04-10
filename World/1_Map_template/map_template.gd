@@ -11,7 +11,7 @@ func _ready() -> void:
 func _on_map_area_area_entered(area: Area2D) -> void: # Outputs the UID of the zone to be used for loading
 	if area is PlayerArea:
 		print("Player entered area " + str(self.name))
-		SignalBus.zone_changed.emit(ResourceUID.id_to_text(ResourceLoader.get_resource_uid(scene_file_path)))
+		# SignalBus.zone_changed.emit(ResourceUID.id_to_text(ResourceLoader.get_resource_uid(scene_file_path)))
 
 # Returns the dictionary of adjacent zones UIDs and offsets
 func get_connected_zones() -> Dictionary[String, Vector2i]:

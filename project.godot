@@ -22,14 +22,15 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Globals="*res://globals.gd"
-SignalBus="*res://signal_bus.gd"
+Globals="*uid://corald11sn7tr"
+SignalBus="*uid://fh2kjf70bqya"
 
 [display]
 
-window/size/viewport_width=960
-window/size/viewport_height=640
+window/size/viewport_width=240
+window/size/viewport_height=160
 window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
