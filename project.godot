@@ -27,8 +27,8 @@ SignalBus="*uid://fh2kjf70bqya"
 
 [display]
 
-window/size/viewport_width=336
-window/size/viewport_height=224
+window/size/viewport_width=240
+window/size/viewport_height=160
 window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cgpvoi6fxqfhf"]
+
+[ext_resource type="Texture2D" uid="uid://cnk4fu2fnfnai" path="res://assets/images/01_title_screen/NuradanRPG-title-screen.png" id="1_jdjue"]
+[ext_resource type="Texture2D" uid="uid://67vjojdextsd" path="res://assets/images/01_title_screen/NuradanRPG-title-screen-logo.png" id="2_q417n"]
+
+[node name="TitleScreen" type="Node" unique_id=2051205687]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=747924859]
+
+[node name="BackgroundColor" type="ColorRect" parent="BackgroundLayer" unique_id=1539412137]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="BackgroundPicture" type="TextureRect" parent="BackgroundLayer" unique_id=1384622804]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jdjue")
+stretch_mode = 5
+
+[node name="TitleTexture" type="TextureRect" parent="BackgroundLayer" unique_id=1740035681]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.0
+offset_top = 16.0
+offset_right = 57.0
+offset_bottom = 69.0
+grow_horizontal = 2
+texture = ExtResource("2_q417n")
+stretch_mode = 2
