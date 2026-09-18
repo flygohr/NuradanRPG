@@ -3,6 +3,12 @@ extends Node2D
 @export var world: Node2D
 
 # Big thanks to u/_mday from Reddit and their project https://github.com/m-mayday/godmon
+
+#FIXME: game crashes upon starting it on Ubuntu
+#FIXME: game doesn't appear to be smooth when running in browser
+#TODO: add debug information to screen for test
+#DONE: setup itch.io cli and rememeber how to push
+
 #TODO Unload maps on exit, could call area exited with the area currently being exited, check for areas no longer needed?
 
 var thread: Thread # Thread to load adjacent scenes
