@@ -1,5 +1,5 @@
 extends Camera2D
 
-func _ready() -> void:
+func _process(_delta) -> void:
 	zoom.x = Globals.CAMERA_ZOOM
 	zoom.y = Globals.CAMERA_ZOOM
