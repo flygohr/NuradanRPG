@@ -29,7 +29,7 @@ SignalBus="*uid://fh2kjf70bqya"
 
 window/size/viewport_width=240
 window/size/viewport_height=160
-window/size/mode=3
+window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 

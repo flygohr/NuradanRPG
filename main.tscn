@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://hrv0tvywctb" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dqkwnw68aqq71" path="res://Player/player.tscn" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bfke804vb2ew5" path="res://debug.gd" id="3_1bvp3"]
+[ext_resource type="FontFile" uid="uid://p3hnctq3mox5" path="res://assets/fonts/monogram/ttf/monogram.ttf" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=1913904985 node_paths=PackedStringArray("world")]
 script = ExtResource("1_h2yge")
@@ -13,3 +15,26 @@ y_sort_enabled = true
 [node name="Player" parent="World" unique_id=1887151178 instance=ExtResource("2_0xm2m")]
 z_index = 1
 position = Vector2(48, 112)
+
+[node name="Debug" type="CanvasLayer" parent="." unique_id=1389192950]
+visible = false
+script = ExtResource("3_1bvp3")
+
+[node name="MarginContainer" type="MarginContainer" parent="Debug" unique_id=631481230]
+custom_maximum_size = Vector2(240, 160)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Debug/MarginContainer" unique_id=1515954273]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_h2yge")
+theme_override_font_sizes/normal_font_size = 16
+text = "FPS: 60
+Memory: 300MB"

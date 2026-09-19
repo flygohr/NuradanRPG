@@ -5,23 +5,14 @@ const CHUNK_SIZE = 24
 var CAMERA_ZOOM := 1.0 # Default is 1
 var PLAYER_SPEED := 7 # Default is 7
 var ZONE_DETECTION_AREA_INCREASE := 0 # Extra tiles inbetween zones detection (for preloading and waiting to deload)
-var IS_DEBUG = false # Enable or disable debug mode
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Fullscreen"):
 		var mode := DisplayServer.window_get_mode()
 		var is_window: bool = mode != DisplayServer.WINDOW_MODE_FULLSCREEN
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if is_window else DisplayServer.WINDOW_MODE_WINDOWED)
-	
-	if event.is_action_pressed("Debug"):
-		if IS_DEBUG == true: IS_DEBUG = false
-		else: IS_DEBUG = true
-		
-	if event.is_action_pressed("Zoom in") and IS_DEBUG:
-		CAMERA_ZOOM = 1.0
-	
-	if event.is_action_pressed("Zoom out") and IS_DEBUG:
-		CAMERA_ZOOM = 0.1
+
 
 enum ZONE_NAMES { 
 	SUND, 
