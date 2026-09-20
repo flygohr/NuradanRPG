@@ -13,20 +13,20 @@ extends Node2D
 
 var thread: Thread # Thread to load adjacent scenes
 var loaded_zones: Dictionary[String, Node] = {}  # Dictionary of currently loaded map chunks
-var current_zone
+var current_zone = Globals.ZONE_UIDS[Globals.ZONE_NAMES.SUND]
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	thread = Thread.new()
-	load_zone(Globals.ZONE_UIDS[Globals.ZONE_NAMES.SUND])
 	SignalBus.zone_changed.connect(change_zone)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	load_zone(Globals.ZONE_UIDS[Globals.ZONE_NAMES.SUND])
 	# SignalBus.zone_left.connect(unload_zones)
 	
 func change_zone_thread(zone_uid : String):
 	
-	current_zone = loaded_zones[zone_uid]
+	current_zone = loaded_zones[zone_uid] # the thread work starts, setting 
+	
 	var new_connected_zones = current_zone.get_connected_zones()
-	print(new_connected_zones)
 
 	# Here, unload any old connection that is NOT in the new connections
 	
@@ -37,10 +37,8 @@ func change_zone_thread(zone_uid : String):
 			chunk.queue_free()
 	
 	loaded_zones[zone_uid] = current_zone
-	
-	return
-	
-	#FIXME: code breaks after this
+	print("new connected zones: \n", new_connected_zones)
+
 	
 	for uid in new_connected_zones.keys():
 		if not uid in loaded_zones:
@@ -55,7 +53,6 @@ func load_zone(zone_uid: String):
 	world.call_deferred("add_child",current_zone)
 	if thread.is_started():
 		thread.wait_to_finish()
-	thread.start(change_zone_thread.bind(zone_uid))
 
 func change_zone(zone_uid: String) -> void:
 	if thread.is_started():
