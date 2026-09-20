@@ -26,7 +26,8 @@ func change_zone_thread(zone_uid : String):
 	
 	current_zone = loaded_zones[zone_uid]
 	var new_connected_zones = current_zone.get_connected_zones()
-	
+	print(new_connected_zones)
+
 	# Here, unload any old connection that is NOT in the new connections
 	
 	for uid in loaded_zones.keys():
@@ -36,6 +37,10 @@ func change_zone_thread(zone_uid : String):
 			chunk.queue_free()
 	
 	loaded_zones[zone_uid] = current_zone
+	
+	return
+	
+	#FIXME: code breaks after this
 	
 	for uid in new_connected_zones.keys():
 		if not uid in loaded_zones:

@@ -2,7 +2,9 @@ extends Node
 
 const TILE_SIZE = 16
 const CHUNK_SIZE = 24
-var CAMERA_ZOOM := 1.0 # Default is 1
+var CAMERA_ZOOM := 1.0: # Default is 1
+	set(new_value): 
+		SignalBus.camera_zoom_changed.emit(new_value)
 var PLAYER_SPEED := 7 # Default is 7
 var ZONE_DETECTION_AREA_INCREASE := 0 # Extra tiles inbetween zones detection (for preloading and waiting to deload)
 

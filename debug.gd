@@ -9,10 +9,10 @@ func _ready() -> void:
 	set_process(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	rich_text_label.text = str(
 		"FPS: ", int(Engine.get_frames_per_second()),
-		"\nMemory: ", OS.get_static_memory_usage()/1024/1024, "MiB"
+		"\nMemory: ", int(OS.get_static_memory_usage()/1024.0/1024.0), "MiB"
 	)
 
 func _input(event: InputEvent) -> void:
