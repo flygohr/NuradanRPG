@@ -49,6 +49,8 @@ func _physics_process(delta):
 		latestDirection = facingDirections.DOWN
 	elif Input.is_action_just_pressed("ui_up"):
 		latestDirection = facingDirections.UP
+		
+	#FIXME: if mashing many buttons too fast, game freezes
 
 	# If they release a button, they cancel their intent
 	if Input.is_action_just_released("ui_up") or Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_down"):
