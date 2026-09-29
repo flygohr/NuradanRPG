@@ -1,26 +1,27 @@
 extends TileMapLayer
 
-@onready var tall_grass_scene = preload("uid://dctbwjndfn6bc")
-@onready var tall_wheat_scene = preload("uid://kuy3e7vuhrmn")
+@onready var grass_tall_scene = preload("uid://dctbwjndfn6bc")
+@onready var wheat_scene = preload("uid://kuy3e7vuhrmn")
 
 func _ready():
 	find_and_spawn_interactive_tiles()
 
 func find_and_spawn_interactive_tiles():
-	var tile_data = get_used_cells()
-	for i in range(0, tile_data.size()):
-		var tile := get_cell_tile_data(tile_data[i])
-		if tile.get_custom_data("tileType") == "tallGrass":
-			set_cell(tile_data[i],-1)
-			var tall_grass = tall_grass_scene.instantiate()
-			var pos = map_to_local(tile_data[i])
-			tall_grass.position = Vector2(pos.x-8, pos.y+8)
-			call_deferred("add_child", tall_grass)
-		elif tile.get_custom_data("tileType") == "tallWheat":
-			set_cell(tile_data[i],-1)
-			var tall_wheat = tall_wheat_scene.instantiate()
-			var pos = map_to_local(tile_data[i])
-			tall_wheat.position = Vector2(pos.x-8, pos.y+8)
-			call_deferred("add_child", tall_wheat)
-		else: # if no matching rule
-			continue
+	var tilemap_data = get_used_cells()
+	for tile_coords in tilemap_data:
+		var tile_data := get_cell_tile_data(tile_coords)
+		match tile_data.get_custom_data("tileType"):
+			"grass_tall":
+				set_cell(tile_coords, -1)
+				var grass_tall = grass_tall_scene.instantiate()
+				var pos = map_to_local(tile_coords)
+				grass_tall.position = Vector2(pos.x-8, pos.y+8)
+				call_deferred("add_child", grass_tall)
+			"wheat":
+				set_cell(tile_coords, -1)
+				var wheat = wheat_scene.instantiate()
+				var pos = map_to_local(tile_coords)
+				wheat.position = Vector2(pos.x-8, pos.y+8)
+				call_deferred("add_child", wheat)
+			_:
+				continue
