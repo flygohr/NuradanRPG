@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://tx1tjsfkp42q" path="res://assets/tilesets/3_props/props_old.png" id="6_0cori"]
 [ext_resource type="Texture2D" uid="uid://bjradiqvqiwyc" path="res://assets/tilesets/2_elevations/elevations_old.png" id="6_w1iuo"]
 [ext_resource type="Texture2D" uid="uid://csoibasxi5te2" path="res://assets/tilesets/4_interactives/interactives_old.png" id="7_fahfj"]
-[ext_resource type="Script" uid="uid://dpub5i6ewko0d" path="res://world/3_interactives/interactive.gd" id="8_h6l4j"]
+[ext_resource type="Script" path="res://world/3_interactives/interactive.gd" id="8_h6l4j"]
 [ext_resource type="Script" uid="uid://d4kcqp60mfj0y" path="res://world/1_map_template/map_area.gd" id="10_tgn16"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2pad"]
