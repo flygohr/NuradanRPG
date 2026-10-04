@@ -1,10 +1,24 @@
 [gd_resource type="TileSet" format=3 uid="uid://c62ds25uskdta"]
 
-[ext_resource type="Texture2D" uid="uid://bc32hqiwgt2ni" path="res://assets/tilesets/3_props/props.png" id="1_mdt11"]
+[ext_resource type="Texture2D" uid="uid://ce1ueo6cj5xf6" path="res://assets/tilesets/3_props/props.png" id="1_mdt11"]
 [ext_resource type="PackedScene" uid="uid://br7uk7u67xslv" path="res://assets/tilesets/4_interactives/grass_tall/grass_tall.tscn" id="2_k1knh"]
 [ext_resource type="PackedScene" uid="uid://c1uwdtqjkgm3y" path="res://assets/tilesets/4_interactives/grass_short/grass_short.tscn" id="3_jduyk"]
 [ext_resource type="PackedScene" uid="uid://dx44v8vmirclr" path="res://assets/tilesets/4_interactives/grass_medium/grass_medium.tscn" id="4_yj5la"]
-[ext_resource type="PackedScene" uid="uid://dgw4aopubo3dv" path="res://assets/tilesets/4_interactives/wheat/wheat.tscn" id="5_4v6bp"]
+[ext_resource type="PackedScene" uid="uid://dgw4aopubo3dv" path="res://assets/tilesets/4_interactives/wheat_tall/wheat_tall.tscn" id="5_mdt11"]
+[ext_resource type="PackedScene" uid="uid://cb64xkjdduu3r" path="res://assets/tilesets/4_interactives/wheat_short/wheat_short.tscn" id="6_k1knh"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k1knh"]
+resource_name = "Interactives"
+scenes/1/scene = ExtResource("6_k1knh")
+scenes/1/display_placeholder = true
+scenes/2/scene = ExtResource("5_mdt11")
+scenes/2/display_placeholder = true
+scenes/3/scene = ExtResource("3_jduyk")
+scenes/3/display_placeholder = true
+scenes/4/scene = ExtResource("4_yj5la")
+scenes/4/display_placeholder = true
+scenes/5/scene = ExtResource("2_k1knh")
+scenes/5/display_placeholder = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdr7n"]
 texture = ExtResource("1_mdt11")
@@ -268,7 +282,6 @@ texture = ExtResource("1_mdt11")
 13:2/0/texture_origin = Vector2i(-16, 16)
 13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -24, 24, -24, 24, 8, 8, 8)
 16:1/0 = 0
-16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 16:2/0 = 0
 16:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:1/size_in_atlas = Vector2i(1, 2)
@@ -311,25 +324,12 @@ texture = ExtResource("1_mdt11")
 16:3/0 = 0
 16:3/0/texture_origin = Vector2i(0, 8)
 16:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_hkror"]
-resource_name = "Grass"
-scenes/1/scene = ExtResource("2_k1knh")
-scenes/1/display_placeholder = true
-scenes/2/scene = ExtResource("3_jduyk")
-scenes/2/display_placeholder = true
-scenes/3/scene = ExtResource("4_yj5la")
-scenes/3/display_placeholder = true
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_0buvg"]
-resource_name = "Crops"
-scenes/2/scene = ExtResource("5_4v6bp")
-scenes/2/display_placeholder = true
+19:11/0 = 0
+20:11/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 1
 custom_data_layer_0/name = "tileType"
 custom_data_layer_0/type = 4
 sources/1 = SubResource("TileSetAtlasSource_fdr7n")
-sources/2 = SubResource("TileSetScenesCollectionSource_hkror")
-sources/3 = SubResource("TileSetScenesCollectionSource_0buvg")
+sources/0 = SubResource("TileSetScenesCollectionSource_k1knh")

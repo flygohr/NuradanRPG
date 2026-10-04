@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhtmd6xne8r2h"
-path="res://.godot/imported/nuradan_wheat.png-a14ef689d046406b8966af3a0e76199d.ctex"
+uid="uid://wpasrdgoj4a7"
+path="res://.godot/imported/nuradan_wheat_short.png-434bababcb38317406a1b19e8b89a896.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/4_interactives/wheat/nuradan_wheat.png"
-dest_files=["res://.godot/imported/nuradan_wheat.png-a14ef689d046406b8966af3a0e76199d.ctex"]
+source_file="res://assets/tilesets/4_interactives/wheat_short/nuradan_wheat_short.png"
+dest_files=["res://.godot/imported/nuradan_wheat_short.png-434bababcb38317406a1b19e8b89a896.ctex"]
 
 [params]
 

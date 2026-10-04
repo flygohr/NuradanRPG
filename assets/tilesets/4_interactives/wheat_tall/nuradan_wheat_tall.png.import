@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df8y8d12yfg6"
-path="res://.godot/imported/ground.png-63a4b839b0b70213c833d2e331782c74.ctex"
+uid="uid://c5oifps8exgki"
+path="res://.godot/imported/nuradan_wheat_tall.png-5876b8946f0c7cbc346f31d3e7b900e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/0_ground/ground.png"
-dest_files=["res://.godot/imported/ground.png-63a4b839b0b70213c833d2e331782c74.ctex"]
+source_file="res://assets/tilesets/4_interactives/wheat_tall/nuradan_wheat_tall.png"
+dest_files=["res://.godot/imported/nuradan_wheat_tall.png-5876b8946f0c7cbc346f31d3e7b900e1.ctex"]
 
 [params]
 

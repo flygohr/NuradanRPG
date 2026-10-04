@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkm80gt2dg6p6"
-path="res://.godot/imported/wheat.png-d2161c48d9a596c354a3bd546be91559.ctex"
+uid="uid://d4eovec8kee0x"
+path="res://.godot/imported/wheat.png-fa990540793b44115e50efd7ed96cc22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/4_interactives/wheat/wheat.png"
-dest_files=["res://.godot/imported/wheat.png-d2161c48d9a596c354a3bd546be91559.ctex"]
+source_file="res://assets/tilesets/4_interactives/wheat_short/wheat.png"
+dest_files=["res://.godot/imported/wheat.png-fa990540793b44115e50efd7ed96cc22.ctex"]
 
 [params]
 
