@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://qhvrd0ywc85l" path="res://world/mts/024_sund.tscn" id="2_jbyd1"]
 [ext_resource type="PackedScene" uid="uid://dqkwnw68aqq71" path="res://Player/player.tscn" id="2_kyb1a"]
 [ext_resource type="Script" uid="uid://cqwjp4charsr1" path="res://world/1_map_template/map_template.gd" id="3_2ptaa"]
-[ext_resource type="PackedScene" uid="uid://ir611ly0qdrp" path="res://world/2_fillers/filler_martens_trees_green.tscn" id="4_l5sl5"]
+[ext_resource type="PackedScene" uid="uid://ir611ly0qdrp" path="res://world/2_fillers/old_filler_martens_trees_green.tscn" id="4_l5sl5"]
 [ext_resource type="Texture2D" uid="uid://bya6mf1b51psi" path="res://assets/tilesets/1_paths/paths_old.png" id="5_c3608"]
 [ext_resource type="Texture2D" uid="uid://bk0a8qhojnjfk" path="res://assets/tilesets/0_ground/ground_old.png" id="5_l5sl5"]
 [ext_resource type="Texture2D" uid="uid://tx1tjsfkp42q" path="res://assets/tilesets/3_props/props_old.png" id="6_0cori"]
