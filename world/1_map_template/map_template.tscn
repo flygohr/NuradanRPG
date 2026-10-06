@@ -211,6 +211,7 @@ texture = ExtResource("5_dfirj")
 11:6/0 = 0
 12:6/0 = 0
 13:6/0 = 0
+12:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yv805"]
 terrain_set_0/mode = 0
@@ -245,5 +246,6 @@ unique_name_in_owner = true
 script = ExtResource("8_0yw8r")
 
 [node name="Fillers" type="Node2D" parent="." unique_id=397958582]
+y_sort_enabled = true
 
 [connection signal="area_entered" from="Map Area" to="." method="_on_map_area_area_entered"]
