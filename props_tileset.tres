@@ -5,20 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://c1uwdtqjkgm3y" path="res://assets/tilesets/4_interactives/grass_short/grass_short.tscn" id="3_jduyk"]
 [ext_resource type="PackedScene" uid="uid://dx44v8vmirclr" path="res://assets/tilesets/4_interactives/grass_medium/grass_medium.tscn" id="4_yj5la"]
 [ext_resource type="PackedScene" uid="uid://dgw4aopubo3dv" path="res://assets/tilesets/4_interactives/wheat_tall/wheat_tall.tscn" id="5_mdt11"]
+[ext_resource type="PackedScene" uid="uid://ch4e2nh6uyis4" path="res://assets/tilesets/4_interactives/grass_short_duskthorne/grass_short_duskthorne.tscn" id="6_jduyk"]
 [ext_resource type="PackedScene" uid="uid://cb64xkjdduu3r" path="res://assets/tilesets/4_interactives/wheat_short/wheat_short.tscn" id="6_k1knh"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k1knh"]
 resource_name = "Interactives"
 scenes/1/scene = ExtResource("6_k1knh")
-scenes/1/display_placeholder = true
 scenes/2/scene = ExtResource("5_mdt11")
-scenes/2/display_placeholder = true
 scenes/3/scene = ExtResource("3_jduyk")
-scenes/3/display_placeholder = true
 scenes/4/scene = ExtResource("4_yj5la")
-scenes/4/display_placeholder = true
 scenes/5/scene = ExtResource("2_k1knh")
-scenes/5/display_placeholder = true
+scenes/6/scene = ExtResource("6_jduyk")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdr7n"]
 texture = ExtResource("1_mdt11")
