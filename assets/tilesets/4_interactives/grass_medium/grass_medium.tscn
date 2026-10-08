@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dx44v8vmirclr"]
 
 [ext_resource type="Script" uid="uid://c70grmvqgri2h" path="res://world/3_interactives/trigger_walkthrough_interaction.gd" id="1_klxsw"]
-[ext_resource type="Texture2D" uid="uid://be1r4q158didk" path="res://assets/tilesets/4_interactives/grass_medium/nuradan_grass_medium.png" id="2_kg1sa"]
+[ext_resource type="Texture2D" uid="uid://21m20f34eyey" path="res://assets/tilesets/4_interactives/grass_medium/nuradan_grass_medium.png" id="2_kg1sa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bvuw"]
 size = Vector2(14, 14)
