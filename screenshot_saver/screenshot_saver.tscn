@@ -3,16 +3,20 @@
 [ext_resource type="Script" uid="uid://x77ncy7rfxnc" path="res://screenshot_saver/screenshot_saver.gd" id="1_0afka"]
 [ext_resource type="PackedScene" uid="uid://qhvrd0ywc85l" path="res://world/mts/024_sund.tscn" id="2_57i1p"]
 [ext_resource type="PackedScene" uid="uid://j3rpiiqfmt12" path="res://world/mts/028_sund_fields.tscn" id="3_qsew1"]
+[ext_resource type="PackedScene" uid="uid://btha5xug2urfc" path="res://world/mts/023_clairvoyant_rise.tscn" id="4_r071k"]
 
 [node name="ScreenshotSaver" type="SubViewportContainer" unique_id=1293883966]
 script = ExtResource("1_0afka")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=152787914]
 handle_input_locally = false
-size = Vector2i(768, 768)
+size = Vector2i(384, 1152)
 render_target_update_mode = 4
 
 [node name="Sund" parent="SubViewport" unique_id=1851982591 instance=ExtResource("2_57i1p")]
 visible = false
 
 [node name="Sund_Fields" parent="SubViewport" unique_id=589500536 instance=ExtResource("3_qsew1")]
+visible = false
+
+[node name="Clairvoyant_Rise" parent="SubViewport" unique_id=1587493941 instance=ExtResource("4_r071k")]
