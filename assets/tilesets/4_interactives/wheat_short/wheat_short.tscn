@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cb64xkjdduu3r"]
 
-[ext_resource type="Script" uid="uid://c70grmvqgri2h" path="res://world/3_interactives/trigger_walkthrough_interaction.gd" id="1_4tmm0"]
+[ext_resource type="Script" uid="uid://c70grmvqgri2h" path="res://src/world/3_interactives/trigger_walkthrough_interaction.gd" id="1_4tmm0"]
 [ext_resource type="Texture2D" uid="uid://wpasrdgoj4a7" path="res://assets/tilesets/4_interactives/wheat_short/nuradan_wheat_short.png" id="2_rme2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bvuw"]

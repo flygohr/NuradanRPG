@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://m42nsift62uj"]
-
-[ext_resource type="PackedScene" uid="uid://bs8svycwuvpem" path="res://world/2_fillers/filler_base.tscn" id="1_1iuej"]
-
-[node name="FillerMartensTreesGreenElevations" unique_id=960468684 instance=ExtResource("1_1iuej")]

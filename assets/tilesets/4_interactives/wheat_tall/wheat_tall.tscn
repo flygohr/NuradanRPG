@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgw4aopubo3dv"]
 
-[ext_resource type="Script" uid="uid://c70grmvqgri2h" path="res://world/3_interactives/trigger_walkthrough_interaction.gd" id="1_74dmq"]
+[ext_resource type="Script" uid="uid://c70grmvqgri2h" path="res://src/world/3_interactives/trigger_walkthrough_interaction.gd" id="1_74dmq"]
 [ext_resource type="Texture2D" uid="uid://c5oifps8exgki" path="res://assets/tilesets/4_interactives/wheat_tall/nuradan_wheat_tall.png" id="2_dwje4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bvuw"]

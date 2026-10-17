@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c6nbii1c1bnuc"]
+
+[ext_resource type="Script" uid="uid://hrv0tvywctb" path="res://src/core/main.gd" id="1_x62ka"]
+[ext_resource type="PackedScene" uid="uid://dqkwnw68aqq71" path="res://src/Player/player.tscn" id="2_w61mg"]
+[ext_resource type="Script" uid="uid://bfke804vb2ew5" path="res://src/debug/debug.gd" id="3_x62ka"]
+[ext_resource type="FontFile" uid="uid://p3hnctq3mox5" path="res://assets/fonts/monogram/ttf/monogram.ttf" id="4_nxx65"]
+
+[node name="Main" type="Node2D" unique_id=1913904985 node_paths=PackedStringArray("world")]
+script = ExtResource("1_x62ka")
+world = NodePath("World")
+
+[node name="World" type="Node2D" parent="." unique_id=1853932650]
+y_sort_enabled = true
+
+[node name="Player" parent="World" unique_id=1887151178 instance=ExtResource("2_w61mg")]
+z_index = 1
+position = Vector2(48, 112)
+
+[node name="Debug" type="CanvasLayer" parent="." unique_id=1389192950]
+visible = false
+script = ExtResource("3_x62ka")
+
+[node name="MarginContainer" type="MarginContainer" parent="Debug" unique_id=631481230]
+custom_maximum_size = Vector2(240, 160)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Debug/MarginContainer" unique_id=1515954273]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_nxx65")
+theme_override_font_sizes/normal_font_size = 16
+text = "FPS: 60
+Memory: 300MB"

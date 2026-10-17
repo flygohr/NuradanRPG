@@ -24,14 +24,15 @@ config/icon="res://icon.svg"
 
 Globals="*uid://corald11sn7tr"
 SignalBus="*uid://fh2kjf70bqya"
+ScenesManager="*uid://dia8cws7xdbcq"
 
 [display]
 
-window/size/viewport_width=240
-window/size/viewport_height=160
-window/size/mode=2
+window/size/viewport_width=960
+window/size/viewport_height=640
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
+window/stretch/scale=4.0
 
 [editor]
 
@@ -41,6 +42,10 @@ movie_writer/fps=30
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
+[global_group]
+
+Warps=""
 
 [input]
 
