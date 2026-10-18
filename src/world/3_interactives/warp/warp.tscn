@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://vdbxs1mdomk4"]
 
-[ext_resource type="Script" uid="uid://x1f32slskqr1" path="res://assets/tilesets/4_interactives/warp/warp.gd" id="1_7t0y0"]
+[ext_resource type="Script" uid="uid://x1f32slskqr1" path="res://src/world/3_interactives/warp/warp.gd" id="1_7t0y0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cd8c5"]
 size = Vector2(14, 14)

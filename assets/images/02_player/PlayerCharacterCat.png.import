@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://21m20f34eyey"
-path="res://.godot/imported/nuradan_grass_medium.png-9a04545194d5167667134aee8060fa7d.ctex"
+uid="uid://bkhk8sx5g26g5"
+path="res://.godot/imported/PlayerCharacterCat.png-b8e8ce8cdf83804a513fe89ed23fc449.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/4_interactives/grass_medium/nuradan_grass_medium.png"
-dest_files=["res://.godot/imported/nuradan_grass_medium.png-9a04545194d5167667134aee8060fa7d.ctex"]
+source_file="res://assets/images/02_player/PlayerCharacterCat.png"
+dest_files=["res://.godot/imported/PlayerCharacterCat.png-b8e8ce8cdf83804a513fe89ed23fc449.ctex"]
 
 [params]
 

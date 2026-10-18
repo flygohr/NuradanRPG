@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b5jcses2ndl7s"]
 
 [ext_resource type="Script" uid="uid://x77ncy7rfxnc" path="res://src/debug/screenshot_saver/screenshot_saver.gd" id="1_0afka"]
-[ext_resource type="PackedScene" uid="uid://qhvrd0ywc85l" path="res://src/world/mts/024_sund.tscn" id="2_57i1p"]
-[ext_resource type="PackedScene" uid="uid://j3rpiiqfmt12" path="res://src/world/mts/028_sund_fields.tscn" id="3_qsew1"]
-[ext_resource type="PackedScene" uid="uid://btha5xug2urfc" path="res://src/world/mts/023_clairvoyant_rise.tscn" id="4_r071k"]
+[ext_resource type="PackedScene" uid="uid://qhvrd0ywc85l" path="res://src/world/zones_mts/024_sund.tscn" id="2_57i1p"]
+[ext_resource type="PackedScene" uid="uid://j3rpiiqfmt12" path="res://src/world/zones_mts/028_sund_fields.tscn" id="3_qsew1"]
+[ext_resource type="PackedScene" uid="uid://btha5xug2urfc" path="res://src/world/zones_mts/023_clairvoyant_rise.tscn" id="4_r071k"]
 
 [node name="ScreenshotSaver" type="SubViewportContainer" unique_id=1293883966]
 script = ExtResource("1_0afka")

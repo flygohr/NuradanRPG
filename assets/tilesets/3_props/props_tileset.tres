@@ -1,21 +1,21 @@
 [gd_resource type="TileSet" format=3 uid="uid://c62ds25uskdta"]
 
+[ext_resource type="PackedScene" uid="uid://cb64xkjdduu3r" path="res://src/world/3_interactives/crops/wheat_short.tscn" id="1_4eguv"]
 [ext_resource type="Texture2D" uid="uid://ce1ueo6cj5xf6" path="res://assets/tilesets/3_props/props.png" id="1_mdt11"]
-[ext_resource type="PackedScene" uid="uid://br7uk7u67xslv" path="res://assets/tilesets/4_interactives/grass_tall/grass_tall.tscn" id="2_k1knh"]
-[ext_resource type="PackedScene" uid="uid://c1uwdtqjkgm3y" path="res://assets/tilesets/4_interactives/grass_short/grass_short.tscn" id="3_jduyk"]
-[ext_resource type="PackedScene" uid="uid://dx44v8vmirclr" path="res://assets/tilesets/4_interactives/grass_medium/grass_medium.tscn" id="4_yj5la"]
-[ext_resource type="PackedScene" uid="uid://dgw4aopubo3dv" path="res://assets/tilesets/4_interactives/wheat_tall/wheat_tall.tscn" id="5_mdt11"]
-[ext_resource type="PackedScene" uid="uid://ch4e2nh6uyis4" path="res://assets/tilesets/4_interactives/grass_short_duskthorne/grass_short_duskthorne.tscn" id="6_jduyk"]
-[ext_resource type="PackedScene" uid="uid://cb64xkjdduu3r" path="res://assets/tilesets/4_interactives/wheat_short/wheat_short.tscn" id="6_k1knh"]
+[ext_resource type="PackedScene" uid="uid://dgw4aopubo3dv" path="res://src/world/3_interactives/crops/wheat_tall.tscn" id="2_p5ks1"]
+[ext_resource type="PackedScene" uid="uid://c1uwdtqjkgm3y" path="res://src/world/3_interactives/grass/grass_short.tscn" id="3_fk4aa"]
+[ext_resource type="PackedScene" uid="uid://dx44v8vmirclr" path="res://src/world/3_interactives/grass/grass_medium.tscn" id="4_d8kuf"]
+[ext_resource type="PackedScene" uid="uid://br7uk7u67xslv" path="res://src/world/3_interactives/grass/grass_tall.tscn" id="5_8m744"]
+[ext_resource type="PackedScene" uid="uid://ch4e2nh6uyis4" path="res://src/world/3_interactives/grass/grass_short_duskthorne.tscn" id="6_8gu3j"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_k1knh"]
 resource_name = "Interactives"
-scenes/1/scene = ExtResource("6_k1knh")
-scenes/2/scene = ExtResource("5_mdt11")
-scenes/3/scene = ExtResource("3_jduyk")
-scenes/4/scene = ExtResource("4_yj5la")
-scenes/5/scene = ExtResource("2_k1knh")
-scenes/6/scene = ExtResource("6_jduyk")
+scenes/1/scene = ExtResource("1_4eguv")
+scenes/2/scene = ExtResource("2_p5ks1")
+scenes/3/scene = ExtResource("3_fk4aa")
+scenes/4/scene = ExtResource("4_d8kuf")
+scenes/5/scene = ExtResource("5_8m744")
+scenes/6/scene = ExtResource("6_8gu3j")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdr7n"]
 texture = ExtResource("1_mdt11")

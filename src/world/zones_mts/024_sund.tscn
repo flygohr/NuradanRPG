@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://qhvrd0ywc85l"]
 
 [ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://src/world/1_map_template/map_template.tscn" id="1_75dyw"]
-[ext_resource type="PackedScene" uid="uid://vdbxs1mdomk4" path="res://assets/tilesets/4_interactives/warp/warp.tscn" id="2_bbo7u"]
+[ext_resource type="PackedScene" uid="uid://vdbxs1mdomk4" path="res://src/world/3_interactives/warp/warp.tscn" id="2_bbo7u"]
 
 [node name="Sund" unique_id=1851982591 instance=ExtResource("1_75dyw")]
 connected_zones = Dictionary[int, Vector2i]({

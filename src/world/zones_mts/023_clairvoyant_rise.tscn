@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://btha5xug2urfc"]
 
 [ext_resource type="PackedScene" uid="uid://bh24in3pbbq33" path="res://src/world/1_map_template/map_template.tscn" id="1_knd4q"]
-[ext_resource type="PackedScene" uid="uid://br7uk7u67xslv" path="res://assets/tilesets/4_interactives/grass_tall/grass_tall.tscn" id="2_m1gui"]
+[ext_resource type="PackedScene" uid="uid://br7uk7u67xslv" path="res://src/world/3_interactives/grass/grass_tall.tscn" id="2_m1gui"]
 [ext_resource type="PackedScene" uid="uid://c3o1y2q3d1nkq" path="res://src/world/2_fillers/filler_martens_trees_clairvoyant_elevations.tscn" id="4_m1gui"]
 [ext_resource type="PackedScene" uid="uid://cqks4arfw7hdq" path="res://src/world/2_fillers/filler_martens_trees_clairvoyant_green.tscn" id="5_7snnd"]
-[ext_resource type="PackedScene" uid="uid://qhvrd0ywc85l" path="res://src/world/mts/024_sund.tscn" id="5_innic"]
+[ext_resource type="PackedScene" uid="uid://qhvrd0ywc85l" path="res://src/world/zones_mts/024_sund.tscn" id="5_innic"]
 [ext_resource type="PackedScene" uid="uid://hr1lew3y6r0a" path="res://src/world/2_fillers/filler_martens_trees_clairvoyant_elevations_blend.tscn" id="7_fq154"]
 
 [node name="Clairvoyant_Rise" unique_id=1587493941 node_paths=PackedStringArray("available_warps") instance=ExtResource("1_knd4q")]

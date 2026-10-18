@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4lh6qbrwcuh0"
-path="res://.godot/imported/nuradan_grass_short_duskthorne.png-1b9fe544f72de67116998f3d7b8d6d25.ctex"
+uid="uid://dr61n7wf17qmj"
+path="res://.godot/imported/PlayerCharacterAlt.png-46dfa919cbf6c7370f0d6e5b53479a40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/4_interactives/grass_short_duskthorne/nuradan_grass_short_duskthorne.png"
-dest_files=["res://.godot/imported/nuradan_grass_short_duskthorne.png-1b9fe544f72de67116998f3d7b8d6d25.ctex"]
+source_file="res://assets/images/02_player/PlayerCharacterAlt.png"
+dest_files=["res://.godot/imported/PlayerCharacterAlt.png-46dfa919cbf6c7370f0d6e5b53479a40.ctex"]
 
 [params]
 

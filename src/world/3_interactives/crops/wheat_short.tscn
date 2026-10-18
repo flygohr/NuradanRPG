@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c1uwdtqjkgm3y"]
+[gd_scene format=3 uid="uid://cb64xkjdduu3r"]
 
-[ext_resource type="Script" uid="uid://c70grmvqgri2h" path="res://src/world/3_interactives/trigger_walkthrough_interaction.gd" id="1_t5bfk"]
-[ext_resource type="Texture2D" uid="uid://ug234db6rvr8" path="res://assets/tilesets/4_interactives/grass_short/nuradan_grass_short.png" id="2_a7kxj"]
+[ext_resource type="Script" uid="uid://c70grmvqgri2h" path="res://src/world/3_interactives/trigger_walkthrough_interaction.gd" id="1_4tmm0"]
+[ext_resource type="Texture2D" uid="uid://wpasrdgoj4a7" path="res://assets/tilesets/4_interactives/nuradan_wheat_short.png" id="2_rme2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5bvuw"]
 size = Vector2(14, 14)
@@ -93,22 +93,22 @@ _data = {
 &"idle": SubResource("Animation_dhv8l")
 }
 
-[node name="GrassShort" type="Area2D" unique_id=1498894240]
+[node name="GrassTall" type="Area2D" unique_id=1498894240]
 y_sort_enabled = true
 position = Vector2(-8, 8)
-script = ExtResource("1_t5bfk")
+script = ExtResource("1_4tmm0")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1206267676]
 y_sort_enabled = true
 position = Vector2(8, -4)
-texture = ExtResource("2_a7kxj")
+texture = ExtResource("2_rme2e")
 offset = Vector2(0, -12)
 hframes = 8
 
 [node name="Overlay" type="Sprite2D" parent="." unique_id=1475707390]
 y_sort_enabled = true
 position = Vector2(8, 0)
-texture = ExtResource("2_a7kxj")
+texture = ExtResource("2_rme2e")
 offset = Vector2(0, -16)
 hframes = 8
 

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dqkwnw68aqq71"]
 
-[ext_resource type="Script" uid="uid://c4p7201shjrth" path="res://src/Player/player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://65s0ujxi2ifn" path="res://src/Player/PlayerCharacter.png" id="1_k53q1"]
-[ext_resource type="Script" uid="uid://cajmnrwn745n" path="res://src/Player/player_collision.gd" id="3_btcbx"]
-[ext_resource type="Script" uid="uid://bniw5x18yrsca" path="res://src/Player/camera.gd" id="3_gwnis"]
-[ext_resource type="Script" uid="uid://c44ibc6caf8xx" path="res://src/Player/player_camera_area.gd" id="4_k53q1"]
+[ext_resource type="Script" uid="uid://c4p7201shjrth" path="res://src/player/player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://65s0ujxi2ifn" path="res://assets/images/02_player/PlayerCharacter.png" id="1_k53q1"]
+[ext_resource type="Script" uid="uid://cajmnrwn745n" path="res://src/player/player_collision.gd" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://bniw5x18yrsca" path="res://src/player/camera.gd" id="3_gwnis"]
+[ext_resource type="Script" uid="uid://c44ibc6caf8xx" path="res://src/player/player_camera_area.gd" id="4_k53q1"]
 
 [sub_resource type="Animation" id="Animation_4ntmi"]
 resource_name = "idleDown"

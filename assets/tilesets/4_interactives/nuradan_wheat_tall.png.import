@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr61n7wf17qmj"
-path="res://.godot/imported/PlayerCharacterAlt.png-609baea9802a3b022de4c143796ac342.ctex"
+uid="uid://c5oifps8exgki"
+path="res://.godot/imported/nuradan_wheat_tall.png-11afb0018b1f2c649e5ef2fb97d18583.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Player/PlayerCharacterAlt.png"
-dest_files=["res://.godot/imported/PlayerCharacterAlt.png-609baea9802a3b022de4c143796ac342.ctex"]
+source_file="res://assets/tilesets/4_interactives/nuradan_wheat_tall.png"
+dest_files=["res://.godot/imported/nuradan_wheat_tall.png-11afb0018b1f2c649e5ef2fb97d18583.ctex"]
 
 [params]
 
